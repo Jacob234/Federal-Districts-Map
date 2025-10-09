@@ -2,6 +2,15 @@
 
 An interactive web map designed for civics education, showcasing how the US federal government divides the country for administrative purposes across the three branches of government.
 
+## The only easy-to-access visualization of its kind on the internet
+- overlays different administrative regions
+- lets you see where you are situated within the federal gov's bureaucracy
+
+## Future
+- expand to more agencies
+- add more educational aspects to learn about your districts and links to official resources
+  
+
 ## 🎯 Purpose
 
 This mini-web version is a streamlined, educational subset of the full [District-Maps project](../README.md), optimized for:
