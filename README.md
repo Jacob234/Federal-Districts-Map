@@ -6,14 +6,24 @@ An interactive web map designed for civics education, showcasing how the US fede
 - overlays different administrative regions
 - lets you see where you are situated within the federal gov's bureaucracy
 
-## Future
-- expand to more agencies
-- add more educational aspects to learn about your districts and links to official resources
-  
+## 🌐 Live Demo
+
+**Status:** Ready for deployment | See [DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md) for setup instructions
+
+**After deployment, access at:**
+- **Landing Page:** `https://jacob234.github.io/Federal-Districts-Map/landing.html`
+- **Interactive Map:** `https://jacob234.github.io/Federal-Districts-Map/index.html`
+
+## Future Enhancements
+- Expand to more agencies (Department of Justice districts, HHS regions, etc.)
+- Add more educational content with links to official resources
+- Implement permalink sharing for specific addresses
+- Add keyboard shortcuts for improved accessibility
+
 
 ## 🎯 Purpose
 
-This mini-web version is a streamlined, educational subset of the full [District-Maps project](../README.md), optimized for:
+This is an educational web application for exploring US federal administrative districts, optimized for:
 - **Static website hosting** (GitHub Pages, Netlify, personal websites)
 - **Civics education** (students, teachers, general public)
 - **Fast loading** (< 5MB total, optimized geometries)
@@ -118,8 +128,8 @@ This mini-web version is a streamlined, educational subset of the full [District
 **Step 1: Clone and Setup**:
 ```bash
 # Clone the repository
-git clone https://github.com/Jacob234/District-Maps.git
-cd District-Maps
+git clone https://github.com/Jacob234/Federal-Districts-Map.git
+cd Federal-Districts-Map
 
 # Create virtual environment
 python3 -m venv venv
@@ -356,23 +366,27 @@ Source data comes from official US federal government agencies and is in the pub
 
 ## 🤝 Contributing
 
-Since this is a subset of the larger project, contributions should generally be made to the [parent District-Maps repository](../README.md).
+Contributions are welcome! Ways to contribute:
+- **Educational content improvements** - Enhance district descriptions
+- **Additional district layers** - Suggest new federal systems to add
+- **UI/UX enhancements** - Improve user experience
+- **Bug reports** - Report issues via [GitHub Issues](https://github.com/Jacob234/Federal-Districts-Map/issues)
+- **Code improvements** - Submit pull requests
 
-For mini-web specific suggestions:
-- Educational content improvements
-- Additional layer suggestions
-- UI/UX enhancements
-- Bug reports
+See [DEPLOYMENT.md](DEPLOYMENT.md) for setup instructions.
 
 ## 🔗 Related Resources
 
-- **Full Project**: [District-Maps](../README.md) - Complete system with all 45+ district types
-- **Documentation**: [docs/](../docs/) - Comprehensive project documentation
-- **Data Sources**: [data-sources.md](../docs/data/data-sources.md) - Where data comes from
+- **US Government Resources:**
+  - [USA.gov - Branches of Government](https://www.usa.gov/branches-of-government)
+  - [Federal Register](https://www.federalregister.gov/)
+  - [Data.gov](https://data.gov/) - Federal open data portal
+- **Data Sources:** All district data comes from official federal agency sources (public domain)
+- **Future Expansion:** Additional district systems planned (DOJ districts, HHS regions, etc.)
 
 ## 📞 Support
 
-Questions or issues? Open an issue on the main [District-Maps GitHub repository](https://github.com/yourusername/District-Maps).
+Questions or issues? Open an issue on the [Federal Districts Map GitHub repository](https://github.com/Jacob234/Federal-Districts-Map/issues).
 
 ## 🎓 Learn More
 

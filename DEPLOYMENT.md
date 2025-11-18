@@ -10,88 +10,150 @@ You need only two files:
 
 The `data/` folder is **not** required for deployment (data is embedded in `index.html`).
 
-## 🌐 Current Deployment
+## 🌐 Current Deployment Status
 
-**This project is already deployed on GitHub Pages!**
+**Status:** ⚠️ **Ready for deployment but not yet live**
 
-- **Live URL:** [https://jacob234.github.io/District-Maps/](https://jacob234.github.io/District-Maps/)
-- **Landing Page:** [https://jacob234.github.io/District-Maps/landing.html](https://jacob234.github.io/District-Maps/landing.html)
-- **Direct to Map:** [https://jacob234.github.io/District-Maps/index.html](https://jacob234.github.io/District-Maps/index.html)
+The project is fully prepared for GitHub Pages deployment. Files are in the repository root and ready to serve.
 
-The files are served from the **repository root** on the `mini-web` branch.
+**After you enable GitHub Pages (see instructions below), the URLs will be:**
+- **Live URL:** `https://jacob234.github.io/Federal-Districts-Map/`
+- **Landing Page:** `https://jacob234.github.io/Federal-Districts-Map/landing.html`
+- **Direct to Map:** `https://jacob234.github.io/Federal-Districts-Map/index.html`
+
+**Current branch:** `claude/evaluate-project-state-01HQZ5zq6QZCrhwwR5KPsm1M`
+**Recommended:** Merge to `main` or create `gh-pages` branch for GitHub Pages
+
+Files are served from the **repository root** (`/`).
 
 ## 📁 File Structure for GitHub Pages
 
 ```
-District-Maps/
-├── index.html              # Interactive map (in root, served by GH Pages)
-├── landing.html            # Landing page (in root, served by GH Pages)
-├── README.md               # Repository README
+Federal-Districts-Map/
+├── index.html              # Interactive map (5.3 MB, served by GH Pages)
+├── landing.html            # Landing page (11 KB, served by GH Pages)
+├── README.md               # Project documentation
+├── DEPLOYMENT.md           # This file
+├── requirements.txt        # Python dependencies
+├── validate.py             # Validation script
 │
-├── mini-web/               # Source files (not served)
-│   ├── index.html          # Source (copied to root)
-│   ├── landing.html        # Source (copied to root)
-│   ├── generate_map.py     # Generator script
-│   ├── map_config.py       # Configuration
-│   └── data/               # Source GeoJSON files
+├── generate_map.py         # Map generator script
+├── map_config.py           # Layer configurations
 │
-└── [other project files]
+├── data/                   # Optimized GeoJSON files (3.9 MB total)
+│   ├── Courts_of_Appeals_Circuits.geojson
+│   ├── Bankruptcy_Courts.geojson
+│   ├── FEMA_Regions.geojson
+│   └── [7 more district files]
+│
+└── scripts/
+    └── optimize_data.py    # Data optimization tool
 ```
 
-## 🔄 Updating the Deployed Map
+**Note:** Only `index.html` and `landing.html` are served by GitHub Pages. The `data/` folder is embedded in the HTML files.
 
-To update the live map:
+## 🚀 Initial GitHub Pages Setup
 
-1. **Regenerate the map** (if data/config changed):
+**First-time deployment? Follow these steps:**
+
+### Step 1: Prepare Your Branch
+
+**Option A: Merge to main** (Recommended)
+```bash
+# Ensure you're on your feature branch
+git checkout claude/evaluate-project-state-01HQZ5zq6QZCrhwwR5KPsm1M
+
+# Merge to main
+git checkout main
+git merge claude/evaluate-project-state-01HQZ5zq6QZCrhwwR5KPsm1M
+git push origin main
+```
+
+**Option B: Deploy from current branch**
+- Keep files on `claude/evaluate-project-state-01HQZ5zq6QZCrhwwR5KPsm1M`
+- Configure GitHub Pages to use this branch (see Step 2)
+
+### Step 2: Enable GitHub Pages (Manual - On GitHub.com)
+
+1. **Go to repository on GitHub:**
+   - Navigate to https://github.com/Jacob234/Federal-Districts-Map
+
+2. **Open Settings:**
+   - Click "Settings" tab at the top
+
+3. **Navigate to Pages:**
+   - In left sidebar, click "Pages" under "Code and automation"
+
+4. **Configure Source:**
+   - Under "Build and deployment"
+   - Source: Select "Deploy from a branch"
+   - Branch: Select your branch (e.g., `main` or current branch)
+   - Folder: Select `/ (root)`
+   - Click "Save"
+
+5. **Wait for deployment:**
+   - GitHub will display: "Your site is live at..."
+   - Initial deployment takes 1-2 minutes
+   - Refresh page to see status
+
+6. **Verify deployment:**
+   - Click the provided URL
+   - Test landing page and map load correctly
+
+### Step 3: Update Documentation
+
+After deployment succeeds, update this file with your actual live URL.
+
+---
+
+## 🔄 Updating an Already-Deployed Map
+
+Once GitHub Pages is configured, updating is easy:
+
+1. **Make changes and regenerate** (if needed):
    ```bash
-   cd mini-web
+   # If you modified data or config
    python generate_map.py
    ```
 
-2. **Copy updated files to root**:
-   ```bash
-   cp mini-web/index.html .
-   cp mini-web/landing.html .
-   ```
-
-3. **Commit and push**:
+2. **Commit and push**:
    ```bash
    git add index.html landing.html
    git commit -m "Update map with latest data"
-   git push origin mini-web
+   git push origin main  # or your deployment branch
    ```
 
-4. **GitHub Pages will auto-deploy** (takes 1-2 minutes)
+3. **GitHub Pages auto-deploys** (takes 1-2 minutes)
 
 ## 🌐 Alternative Deployment Options
 
-### Option 1: GitHub Pages (Current Setup)
+### Option 1: GitHub Pages (Recommended - Free)
 
 **Best for**: Free hosting, version control, easy updates
 
-**Current Configuration**:
-- Repository: https://github.com/Jacob234/District-Maps
-- Branch: `mini-web`
+**Current Status**: Not yet configured (see setup instructions above)
+
+**After Setup**:
+- Repository: https://github.com/Jacob234/Federal-Districts-Map
+- Expected URL: https://jacob234.github.io/Federal-Districts-Map/
+- Branch: `main` (recommended) or current branch
 - Source: `/` (root folder)
-- URL: https://jacob234.github.io/District-Maps/
 
-**To replicate for your own repository**:
+**For Your Own Fork**:
 
-1. **Fork or clone the repository**
+1. **Fork the repository on GitHub**
+   - Click "Fork" on https://github.com/Jacob234/Federal-Districts-Map
+
+2. **Clone your fork**:
    ```bash
-   git clone https://github.com/Jacob234/District-Maps.git
-   cd District-Maps
-   git checkout mini-web
+   git clone https://github.com/YOUR-USERNAME/Federal-Districts-Map.git
+   cd Federal-Districts-Map
    ```
 
-2. **Enable GitHub Pages**:
-   - Go to repository Settings
-   - Navigate to "Pages" section
-   - Source: Select branch (e.g., `mini-web` or `main`), "/" (root) folder
-   - Click "Save"
+3. **Enable GitHub Pages** (see "Initial GitHub Pages Setup" above)
 
-3. **Access your site**:
-   - URL: `https://yourusername.github.io/District-Maps/`
+4. **Access your site**:
+   - URL: `https://YOUR-USERNAME.github.io/Federal-Districts-Map/`
 
 **Cost**: Free
 
@@ -259,7 +321,7 @@ If you already have a website, simply:
 
 In `landing.html`, update:
 ```html
-<a href="https://github.com/YOUR-USERNAME/District-Maps">District-Maps Project</a>
+<a href="https://github.com/YOUR-USERNAME/Federal-Districts-Map">Federal Districts Map Project</a>
 ```
 
 ### 2. Add Analytics (Optional)
@@ -467,4 +529,4 @@ Your educational map is now live and accessible to the world!
 
 ---
 
-**Questions?** Open an issue on the [main repository](https://github.com/yourusername/District-Maps).
+**Questions?** Open an issue on the [main repository](https://github.com/Jacob234/Federal-Districts-Map/issues).
