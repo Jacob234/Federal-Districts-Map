@@ -1,0 +1,67 @@
+name: Validate Project
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov
+
+    - name: Run validation script
+      run: |
+        python validate.py
+
+    - name: Run unit tests
+      run: |
+        python -m unittest discover tests -v
+
+    - name: Check data files exist
+      run: |
+        ls -lh data/*.geojson
+        echo "Total data size:"
+        du -sh data/
+
+    - name: Verify HTML files
+      run: |
+        test -f index.html || echo "Warning: index.html not found"
+        test -f landing.html || echo "Warning: landing.html not found"
+        ls -lh *.html 2>/dev/null || true
+
+    - name: Check file sizes
+      run: |
+        if [ -f index.html ]; then
+          size=$(stat -f%z index.html 2>/dev/null || stat -c%s index.html)
+          size_mb=$((size / 1024 / 1024))
+          echo "index.html size: ${size_mb}MB"
+          if [ $size_mb -gt 15 ]; then
+            echo "::warning::index.html is larger than 15MB"
+          fi
+        fi
+
+    - name: Summary
+      run: |
+        echo "✅ All validation checks passed!"
+        echo "📊 Project statistics:"
+        echo "- GeoJSON files: $(ls data/*.geojson 2>/dev/null | wc -l)"
+        echo "- Test files: $(find tests -name 'test_*.py' | wc -l)"
+        echo "- Python files: $(find . -name '*.py' -not -path './venv/*' -not -path './.git/*' | wc -l)"

@@ -1,4 +1,11 @@
-# US Federal Districts - Educational Map (Mini-Web Version)
+# US Federal Districts - Educational Map
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Validation](https://github.com/Jacob234/Federal-Districts-Map/workflows/Validate%20Project/badge.svg)](https://github.com/Jacob234/Federal-Districts-Map/actions)
+[![GitHub Pages](https://img.shields.io/badge/demo-live-brightgreen)](https://jacob234.github.io/Federal-Districts-Map/)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 An interactive web map designed for civics education, showcasing how the US federal government divides the country for administrative purposes across the three branches of government.
 
