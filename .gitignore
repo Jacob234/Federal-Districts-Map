@@ -7,19 +7,49 @@ __pycache__/
 venv/
 env/
 ENV/
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
 
 # macOS
 .DS_Store
 .AppleDouble
 .LSOverride
+._*
 
-# Project
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Project-specific
 *.html.bak
 data_cache/
 .cache/
+temp/
+tmp/
 
-# IDE
+# IDE & Editors
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-project
+*.sublime-workspace
+*~
+
+# Logs
+*.log
+logs/

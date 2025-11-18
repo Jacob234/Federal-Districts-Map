@@ -1,0 +1,39 @@
+# US Federal Districts Map - Python Dependencies
+# ==================================================
+# Core dependencies for map generation and data processing
+# Python 3.8+ required
+
+# Map Generation
+folium>=0.14.0,<0.16.0          # Interactive web map generation
+branca>=0.6.0,<0.8.0            # Required by folium for HTML templating
+
+# Geospatial Data Processing
+geopandas>=0.12.0,<0.15.0       # Geospatial data manipulation
+shapely>=2.0.0,<3.0.0           # Geometric operations and simplification
+fiona>=1.9.0,<2.0.0             # GeoJSON file I/O (required by geopandas)
+pyproj>=3.4.0,<4.0.0            # Coordinate reference system transformations
+
+# Data Manipulation
+pandas>=1.5.0,<3.0.0            # Data structures and analysis
+
+# Optional: Development Dependencies
+# Uncomment if you're developing/testing
+# pytest>=7.0.0                 # Testing framework
+# black>=23.0.0                 # Code formatting
+# flake8>=6.0.0                 # Linting
+# mypy>=1.0.0                   # Type checking
+
+# Installation Instructions
+# -------------------------
+# 1. Create virtual environment:
+#    python3 -m venv venv
+#
+# 2. Activate virtual environment:
+#    source venv/bin/activate  (Linux/Mac)
+#    venv\Scripts\activate     (Windows)
+#
+# 3. Install dependencies:
+#    pip install -r requirements.txt
+#
+# 4. Generate map:
+#    python generate_map.py

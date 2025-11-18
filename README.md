@@ -112,20 +112,53 @@ This mini-web version is a streamlined, educational subset of the full [District
 
 **Prerequisites**:
 - Python 3.8+
-- Virtual environment from parent project
-- Source data from main project
+- Git (for cloning the repository)
+- Virtual environment (recommended)
 
-**Generate map**:
+**Step 1: Clone and Setup**:
 ```bash
-cd mini-web
-source ../venv/bin/activate
+# Clone the repository
+git clone https://github.com/Jacob234/District-Maps.git
+cd District-Maps
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate  # Linux/Mac
+# OR
+venv\Scripts\activate     # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+**Step 2: Generate Map**:
+```bash
+# Generate the interactive map
 python generate_map.py
+
+# Output: index.html (5.3 MB) with embedded data
+```
+
+**Step 3: Test Locally**:
+```bash
+# Open in browser
+open index.html  # Mac
+xdg-open index.html  # Linux
+start index.html  # Windows
 ```
 
 **Re-optimize data** (if source data changes):
 ```bash
 python scripts/optimize_data.py
 ```
+
+**Troubleshooting**:
+- **Import errors**: Ensure virtual environment is activated and dependencies installed
+- **File not found**: Check that you're in the project root directory
+- **Large file size**: This is normal - map embeds all GeoJSON data (~5MB)
+- **Missing dependencies**: Run `pip install -r requirements.txt`
 
 ## 📁 Project Structure
 
