@@ -17,6 +17,10 @@ federal government's geography.**
 - **Educational popups** — click any region for its purpose, history, and why it
   matters, with links to official resources (each Federal Reserve bank and appeals
   circuit links to its own site)
+- **District profiles** — the 12 appeals circuits and 12 Federal Reserve districts
+  have full profiles: quick facts, a history timeline, a "today" section, and
+  sources. Open one from any popup or search result, or link to it directly
+  (`?profile=courts_of_appeals:Ninth Circuit`)
 - **Shareable links** — the URL tracks your enabled layers and last search, so you
   can send a classroom-ready view to anyone
 - **Fast** — layers load lazily on first toggle (~100–500 KB each); no build step,
@@ -62,6 +66,7 @@ That's it — no dependencies, no build step.
 index.html          # The map app
 landing.html        # Introduction page
 layers.json         # Layer registry: files, styles, educational content, links
+content/*.json      # District profiles (history timelines, facts, sources)
 js/app.js           # All application logic (Leaflet, search, point-in-polygon)
 css/style.css       # Styles
 data/*.geojson      # Optimized district boundaries (~2.8 MB total)
@@ -79,6 +84,16 @@ scripts/optimize_data.py  # Simplifies raw agency GeoJSON (needs geopandas)
    (`nameField`), the educational text, and an official link.
 
 No code changes needed for a standard polygon layer.
+
+## Writing district profiles
+
+Profiles live in `content/<layer_id>.json`, keyed by the district's name (the
+layer's `nameField` value). Each profile has a `tagline`, `quickFacts`
+(label/value pairs), a `timeline` (period/text entries), a `today` paragraph,
+and `sources` (title/url). Point a layer at its profile file with
+`"profilesFile": "content/<layer_id>.json"` in `layers.json` and the "Full
+profile" buttons appear automatically. Profiles are drafted from public
+histories and must cite their sources — corrections welcome.
 
 ## Data & accuracy
 

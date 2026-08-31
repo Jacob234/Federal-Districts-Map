@@ -14,8 +14,10 @@ const state = {
   map: null,
   config: null,          // parsed layers.json
   layers: new Map(),     // id -> { config, leafletLayer, data (GeoJSON), loading }
+  profiles: new Map(),   // layer id -> promise of parsed profiles file
   searchMarker: null,
   lastQuery: null,       // last successful search string, kept in the URL
+  openProfile: null,     // { layerId, district } while the profile panel is open
 };
 
 // ---------------------------------------------------------------------------
@@ -61,6 +63,20 @@ async function init() {
   if (q) {
     document.getElementById('address-input').value = q;
     searchAddress();
+  }
+
+  // ?profile=layerId:District Name deep-links straight into a district profile
+  const profileParam = params.get('profile');
+  if (profileParam) {
+    const sep = profileParam.indexOf(':');
+    if (sep > 0) {
+      const layerId = profileParam.slice(0, sep);
+      const district = profileParam.slice(sep + 1);
+      if (state.layers.has(layerId)) {
+        setLayerEnabled(layerId, true);
+        openProfile(layerId, district, { zoomTo: !q });
+      }
+    }
   }
 }
 
@@ -240,6 +256,9 @@ function featurePopupHtml(layerConfig, props) {
     const linkLabel = featureLink ? `Visit the ${escapeHtml(name)} website` : 'Official resource';
     html += `<div class="popup-link"><a href="${escapeHtml(link)}" target="_blank" rel="noopener">${linkLabel} ↗</a></div>`;
   }
+  if (layerConfig.profilesFile) {
+    html += `<button type="button" class="profile-btn" data-layer="${escapeHtml(layerConfig.id)}" data-district="${escapeHtml(name)}">📖 Full profile: history &amp; why it matters</button>`;
+  }
   html += `</div>`;
   return html;
 }
@@ -270,6 +289,156 @@ function wireControls() {
   document.getElementById('sidebar-toggle').addEventListener('click', () => {
     document.getElementById('sidebar').classList.toggle('open');
   });
+  document.getElementById('profile-close').addEventListener('click', closeProfile);
+  // Profile buttons live inside popups and search results, which are inserted
+  // dynamically — handle their clicks by delegation.
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.profile-btn');
+    if (btn) openProfile(btn.dataset.layer, btn.dataset.district, { zoomTo: false });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeProfile();
+  });
+}
+
+// ---------------------------------------------------------------------------
+// District profiles (content/*.json)
+
+function ensureProfiles(layerId) {
+  if (state.profiles.has(layerId)) return state.profiles.get(layerId);
+  const entry = state.layers.get(layerId);
+  if (!entry || !entry.config.profilesFile) return Promise.resolve(null);
+  const promise = fetch(entry.config.profilesFile)
+    .then((r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status} for ${entry.config.profilesFile}`);
+      return r.json();
+    })
+    .catch((err) => {
+      console.error('Failed to load profiles:', err);
+      state.profiles.delete(layerId);
+      return null;
+    });
+  state.profiles.set(layerId, promise);
+  return promise;
+}
+
+async function openProfile(layerId, district, { zoomTo = false } = {}) {
+  const entry = state.layers.get(layerId);
+  if (!entry) return;
+
+  const panel = document.getElementById('profile-panel');
+  const content = document.getElementById('profile-content');
+  panel.hidden = false;
+  content.innerHTML = '<p class="profile-loading">Loading profile…</p>';
+  state.openProfile = { layerId, district };
+  syncUrl();
+
+  const profiles = await ensureProfiles(layerId);
+  const profile = profiles && profiles[district];
+  if (!profile) {
+    content.innerHTML = `
+      <h2>${escapeHtml(district)}</h2>
+      <p class="profile-loading">A full profile for this district hasn't been written yet.</p>`;
+    return;
+  }
+  content.innerHTML = renderProfileHtml(entry.config, district, profile);
+  panel.scrollTop = 0;
+
+  if (zoomTo) zoomToDistrict(layerId, district);
+}
+
+function closeProfile() {
+  document.getElementById('profile-panel').hidden = true;
+  state.openProfile = null;
+  syncUrl();
+}
+
+function renderProfileHtml(layerConfig, district, profile) {
+  const branch = state.config.branches[layerConfig.branch] || {};
+  let html = `<div class="profile-kicker" style="color:${branch.color || '#666'}">${branch.icon || ''} ${escapeHtml(layerConfig.name)}</div>`;
+  html += `<h2>${escapeHtml(district)}</h2>`;
+  if (profile.tagline) html += `<p class="profile-tagline">${escapeHtml(profile.tagline)}</p>`;
+
+  if (profile.quickFacts && profile.quickFacts.length) {
+    html += '<dl class="profile-facts">';
+    for (const fact of profile.quickFacts) {
+      html += `<div><dt>${escapeHtml(fact.label)}</dt><dd>${escapeHtml(fact.value)}</dd></div>`;
+    }
+    html += '</dl>';
+  }
+
+  if (profile.timeline && profile.timeline.length) {
+    html += '<h3>History</h3><ol class="profile-timeline">';
+    for (const item of profile.timeline) {
+      html += `<li><span class="timeline-period">${escapeHtml(item.period)}</span><span class="timeline-text">${escapeHtml(item.text)}</span></li>`;
+    }
+    html += '</ol>';
+  }
+
+  if (profile.today) {
+    html += `<h3>Today</h3><p class="profile-today">${escapeHtml(profile.today)}</p>`;
+  }
+
+  const featureLink = (layerConfig.featureLinks || {})[district];
+  if (featureLink) {
+    html += `<p class="popup-link"><a href="${escapeHtml(featureLink)}" target="_blank" rel="noopener">Official ${escapeHtml(district)} website ↗</a></p>`;
+  }
+
+  if (profile.sources && profile.sources.length) {
+    html += '<h3>Sources &amp; further reading</h3><ul class="profile-sources">';
+    for (const src of profile.sources) {
+      html += `<li><a href="${escapeHtml(src.url)}" target="_blank" rel="noopener">${escapeHtml(src.title)} ↗</a></li>`;
+    }
+    html += '</ul>';
+  }
+
+  html += `<p class="profile-share"><button type="button" class="profile-copy" onclick="navigator.clipboard && navigator.clipboard.writeText(location.href)">🔗 Copy link to this profile</button></p>`;
+  return html;
+}
+
+async function zoomToDistrict(layerId, district) {
+  const entry = state.layers.get(layerId);
+  try {
+    await ensureLayerData(layerId);
+  } catch {
+    return;
+  }
+  const feature = (entry.data.features || []).find(
+    (f) => featureName(entry.config, f.properties || {}) === district
+  );
+  if (feature) {
+    const bounds = featureBounds(feature.geometry);
+    if (bounds && bounds.isValid()) state.map.fitBounds(bounds, { padding: [40, 40], maxZoom: 7 });
+  }
+}
+
+// Bounds that survive the antimeridian: districts like the Ninth Circuit
+// include Guam, so naive min/max longitude spans the whole globe. If the
+// longitudes span more than 180°, shift the eastern-hemisphere points by
+// -360° so the bounds stay contiguous (Leaflet accepts out-of-range lngs).
+function featureBounds(geometry) {
+  const lons = [];
+  const lats = [];
+  const collect = (coords) => {
+    if (typeof coords[0] === 'number') {
+      lons.push(coords[0]);
+      lats.push(coords[1]);
+    } else {
+      coords.forEach(collect);
+    }
+  };
+  if (!geometry || !geometry.coordinates) return null;
+  collect(geometry.coordinates);
+  if (!lons.length) return null;
+
+  let adjusted = lons;
+  if (Math.max(...lons) - Math.min(...lons) > 180) {
+    adjusted = lons.map((l) => (l > 0 ? l - 360 : l));
+  }
+  return L.latLngBounds(
+    [Math.min(...lats), Math.min(...adjusted)],
+    [Math.max(...lats), Math.max(...adjusted)]
+  );
 }
 
 function setSearchStatus(message, isError = false) {
@@ -401,6 +570,9 @@ function renderResults(label, matches) {
       if (link) {
         html += `<a class="result-link" href="${escapeHtml(link)}" target="_blank" rel="noopener">Learn more ↗</a>`;
       }
+      if (layer.profilesFile) {
+        html += ` <button type="button" class="profile-btn profile-btn-inline" data-layer="${escapeHtml(layer.id)}" data-district="${escapeHtml(name)}">📖 Full profile</button>`;
+      }
       html += `</div>`;
     }
   }
@@ -457,6 +629,7 @@ function syncUrl() {
     .map((e) => e.config.id);
   params.set('layers', enabled.join(','));
   if (state.lastQuery) params.set('q', state.lastQuery);
+  if (state.openProfile) params.set('profile', `${state.openProfile.layerId}:${state.openProfile.district}`);
   history.replaceState(null, '', `${location.pathname}?${params.toString()}`);
 }
 

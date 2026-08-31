@@ -1,0 +1,242 @@
+{
+  "_about": "District profiles for the Federal Reserve Districts layer. Keys match the NAME property in the GeoJSON. Drafted from public histories; each profile lists its sources.",
+  "Federal Reserve Bank of Boston": {
+    "tagline": "The First District: New England's Fed, a leader in payments research and community-development economics.",
+    "quickFacts": [
+      { "label": "District", "value": "1st — New England (excluding Fairfield County, CT)" },
+      { "label": "Headquarters", "value": "600 Atlantic Avenue, Boston" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1913–1914", "text": "The Federal Reserve Act creates 12 districts; Boston is the natural pick for New England's textile-and-banking economy, and all 12 banks open for business on the same day in November 1914." },
+      { "period": "20th century", "text": "As New England's mills decline, the bank's economists become known for studying regional economic transition — how an old industrial economy reinvents itself." },
+      { "period": "2010s–2020s", "text": "Boston leads the Fed's work on instant payments, helping build the FedNow service launched in 2023." }
+    ],
+    "today": "Beyond supervising New England banks, the Boston Fed runs some of the system's most visible applied research on payments technology and household finances — the plumbing of the economy that most people never see.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Boston", "url": "https://www.bostonfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Boston", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Boston" }
+    ]
+  },
+  "Federal Reserve Bank of New York": {
+    "tagline": "The Second District: first among equals — home of the trading desk, the gold vault, and a permanent vote on monetary policy.",
+    "quickFacts": [
+      { "label": "District", "value": "2nd — New York State, northern New Jersey, Fairfield County (CT), Puerto Rico, US Virgin Islands" },
+      { "label": "Headquarters", "value": "33 Liberty Street, Manhattan" },
+      { "label": "Opened", "value": "November 16, 1914" },
+      { "label": "Special role", "value": "Executes monetary policy; its president holds a permanent FOMC vote" }
+    ],
+    "timeline": [
+      { "period": "1914–1928", "text": "Under Benjamin Strong, the New York Fed becomes the system's de facto leader, inventing modern open-market operations; his death in 1928 leaves a leadership vacuum many historians link to the Fed's failures in the Depression." },
+      { "period": "1924", "text": "The fortress at 33 Liberty Street opens; its basement vault, resting on Manhattan bedrock, comes to hold the largest known concentration of monetary gold in the world — most of it belonging to foreign governments." },
+      { "period": "2008", "text": "The bank sits at the center of the financial crisis response — Bear Stearns, AIG, and the emergency lending facilities all run through its trading desk." }
+    ],
+    "today": "Every Fed interest-rate decision is actually carried out here: the Open Market Trading Desk buys and sells securities to move the rates that ripple out to mortgages and money markets. No other regional Reserve Bank has a comparable operational role.",
+    "sources": [
+      { "title": "Federal Reserve Bank of New York", "url": "https://www.newyorkfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of New York", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_New_York" }
+    ]
+  },
+  "Federal Reserve Bank of Philadelphia": {
+    "tagline": "The Third District: the smallest by geography, in the city where American central banking began.",
+    "quickFacts": [
+      { "label": "District", "value": "3rd — eastern Pennsylvania, southern New Jersey, Delaware" },
+      { "label": "Headquarters", "value": "10 Independence Mall, Philadelphia" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1791 & 1816", "text": "Philadelphia hosts both the First and Second Banks of the United States — the country's two pre-Fed experiments with central banking, the second killed by Andrew Jackson's veto." },
+      { "period": "1914", "text": "The city's banking pedigree earns it a Reserve Bank despite the district being the smallest in area — a nod to history as much as geography." },
+      { "period": "20th–21st century", "text": "The bank develops a specialty in consumer credit and real-time economic indicators; its monthly manufacturing survey and 'Philly Fed index' become market-moving data." }
+    ],
+    "today": "The Philadelphia Fed is known for consumer-finance research — credit cards, mortgages, household debt — and for economic indicators that traders watch worldwide, an outsized analytical footprint for the smallest district on the map.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Philadelphia", "url": "https://www.philadelphiafed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Philadelphia", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Philadelphia" }
+    ]
+  },
+  "Federal Reserve Bank of Cleveland": {
+    "tagline": "The Fourth District: the industrial heartland's Fed, with a long specialty in inflation research.",
+    "quickFacts": [
+      { "label": "District", "value": "4th — Ohio, western Pennsylvania, eastern Kentucky, northern West Virginia panhandle" },
+      { "label": "Headquarters", "value": "1455 East 6th Street, Cleveland" },
+      { "label": "Branches", "value": "Cincinnati, Pittsburgh" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "Cleveland — then a top-six American city riding steel and oil — wins the Fourth District over rival claims from Pittsburgh and Cincinnati, which receive branches instead." },
+      { "period": "1923", "text": "Its grand headquarters opens, vault doors among the largest ever built — monuments to an era when money meant physical gold." },
+      { "period": "Late 20th century", "text": "As heavy industry contracts, the bank's economists become leading students of inflation measurement, developing widely used measures like median CPI." }
+    ],
+    "today": "The Cleveland Fed's Center for Inflation Research makes it the system's reference point on the very thing most people associate with the Fed — where prices are headed — while its district tells the story of America's industrial transformation.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Cleveland", "url": "https://www.clevelandfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Cleveland", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Cleveland" }
+    ]
+  },
+  "Federal Reserve Bank of Richmond": {
+    "tagline": "The Fifth District: the capital-adjacent Fed that supervises many of the nation's largest banks.",
+    "quickFacts": [
+      { "label": "District", "value": "5th — Maryland, Virginia, North and South Carolina, most of West Virginia, Washington DC" },
+      { "label": "Headquarters", "value": "701 East Byrd Street, Richmond" },
+      { "label": "Branches", "value": "Baltimore, Charlotte" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "Richmond's selection over Baltimore is one of the 1914 committee's most contested calls — a political fight remembered in Fed lore as evidence of how hard-nosed the district-drawing really was." },
+      { "period": "Late 20th century", "text": "Charlotte's rise as a banking capital (Bank of America, Wachovia/Wells Fargo East Coast operations) concentrates enormous supervisory responsibility in the district." },
+      { "period": "21st century", "text": "The Richmond Fed becomes a major technology and operations hub for the entire Federal Reserve System." }
+    ],
+    "today": "With Washington's federal workforce, Charlotte's mega-banks, and the mid-Atlantic economy in its territory, the Richmond Fed pairs a heavyweight bank-supervision portfolio with research on labor markets and rural-urban economic divides.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Richmond", "url": "https://www.richmondfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Richmond", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Richmond" }
+    ]
+  },
+  "Federal Reserve Bank of Atlanta": {
+    "tagline": "The Sixth District: the Southeast's Fed, a payments powerhouse for a fast-growing region.",
+    "quickFacts": [
+      { "label": "District", "value": "6th — Georgia, Alabama, Florida, and parts of Tennessee, Louisiana, Mississippi" },
+      { "label": "Headquarters", "value": "1000 Peachtree Street NE, Atlanta" },
+      { "label": "Branches", "value": "Birmingham, Jacksonville, Miami, Nashville, New Orleans" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "Atlanta anchors the Deep South district at a time when the region's economy still ran on cotton finance." },
+      { "period": "20th century", "text": "The district's five branches — more than most — reflect the Southeast's dispersed economy, from Gulf shipping to Florida's boom-and-bust cycles." },
+      { "period": "21st century", "text": "Atlanta becomes one of the system's centers for payment processing and fintech research, mirroring the city's rise as a transaction-processing capital ('Transaction Alley')." }
+    ],
+    "today": "The Atlanta Fed processes a huge share of the nation's payments and studies the economics of the fastest-growing region in the country — including well-known tools like GDPNow, its real-time growth estimate.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Atlanta", "url": "https://www.atlantafed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Atlanta", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Atlanta" }
+    ]
+  },
+  "Federal Reserve Bank of Chicago": {
+    "tagline": "The Seventh District: the Fed of the industrial and agricultural Midwest — and of the world's derivatives markets.",
+    "quickFacts": [
+      { "label": "District", "value": "7th — northern Illinois and Indiana, southern Wisconsin, Iowa, most of Michigan" },
+      { "label": "Headquarters", "value": "230 South LaSalle Street, Chicago" },
+      { "label": "Branch", "value": "Detroit" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "Chicago — the nation's second city and the hub of Midwestern finance, rail, and grain trading — is an uncontested choice for a Reserve Bank." },
+      { "period": "1930s", "text": "The district lives through the banking collapse at the Depression's epicenter of farm and factory distress." },
+      { "period": "1970s–present", "text": "As Chicago's futures exchanges become the world's risk-transfer capital, the bank develops deep expertise in derivatives markets and financial-market infrastructure." }
+    ],
+    "today": "The Chicago Fed watches over an economy that still makes and grows things — autos in Michigan, corn and soybeans in Iowa — while its financial-markets group monitors the exchanges where the world hedges everything from interest rates to harvests.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Chicago", "url": "https://www.chicagofed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Chicago", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Chicago" }
+    ]
+  },
+  "Federal Reserve Bank of St. Louis": {
+    "tagline": "The Eighth District: the monetarist Fed — and keeper of FRED, the world's favorite economic database.",
+    "quickFacts": [
+      { "label": "District", "value": "8th — Arkansas plus parts of Missouri, Illinois, Indiana, Kentucky, Tennessee, Mississippi" },
+      { "label": "Headquarters", "value": "One Federal Reserve Bank Plaza, St. Louis" },
+      { "label": "Branches", "value": "Little Rock, Louisville, Memphis" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "St. Louis, then a top-five US city and gateway to the Mississippi Valley, anchors a district reaching into seven states — Arkansas is the only state entirely within it." },
+      { "period": "1960s–1980s", "text": "The bank becomes the intellectual home of monetarism inside the Fed, publishing money-supply data and research that challenge the system's own orthodoxy — a rare case of a regional bank as loyal opposition." },
+      { "period": "1991–present", "text": "It launches FRED (Federal Reserve Economic Data), which grows into the world's most widely used free economic database, alongside the FRASER digital archive of economic history." }
+    ],
+    "today": "If you've ever seen a chart of US unemployment or GDP on the internet, odds are it came from FRED. The St. Louis Fed turned a mid-sized district into the Fed's public data window — a genuinely democratizing piece of the bureaucracy.",
+    "sources": [
+      { "title": "Federal Reserve Bank of St. Louis", "url": "https://www.stlouisfed.org/" },
+      { "title": "FRED — Federal Reserve Economic Data", "url": "https://fred.stlouisfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of St. Louis", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_St._Louis" }
+    ]
+  },
+  "Federal Reserve Bank of Minneapolis": {
+    "tagline": "The Ninth District: the northern frontier Fed, from the Great Lakes to Glacier — and a heavyweight in economic theory.",
+    "quickFacts": [
+      { "label": "District", "value": "9th — Minnesota, Montana, North and South Dakota, northwestern Wisconsin, Upper Michigan" },
+      { "label": "Headquarters", "value": "90 Hennepin Avenue, Minneapolis" },
+      { "label": "Branch", "value": "Helena" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "Minneapolis — the flour-milling capital financing the wheat belt — anchors a vast, sparsely populated district stretching to the Rockies." },
+      { "period": "1970s–1990s", "text": "A partnership with the University of Minnesota makes the bank a center of the 'rational expectations' revolution in macroeconomics; several collaborators later win Nobel Prizes." },
+      { "period": "2008–2010s", "text": "The bank becomes known for outspoken research on too-big-to-fail banks and, later, on economic opportunity gaps." }
+    ],
+    "today": "The Minneapolis Fed pairs a frontier-sized district — much of it farm, forest, and reservation land — with some of the most ambitious pure research in the system, including its Opportunity & Inclusive Growth Institute.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Minneapolis", "url": "https://www.minneapolisfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Minneapolis", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Minneapolis" }
+    ]
+  },
+  "Federal Reserve Bank of Kansas City": {
+    "tagline": "The Tenth District: the plains-and-energy Fed, host of the world's most famous economic conference — and half the reason Missouri has two Reserve Banks.",
+    "quickFacts": [
+      { "label": "District", "value": "10th — Colorado, Kansas, Nebraska, Oklahoma, Wyoming, northern New Mexico, western Missouri" },
+      { "label": "Headquarters", "value": "1 Memorial Drive, Kansas City, MO" },
+      { "label": "Branches", "value": "Denver, Oklahoma City, Omaha" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "Missouri becomes the only state with two Reserve Banks — Kansas City and St. Louis. Critics then and now note that Missouri Democrats held key posts when the map was drawn; defenders point to the state's genuine role as a two-front banking gateway." },
+      { "period": "1978–present", "text": "The bank's Jackson Hole Economic Symposium in Wyoming grows into the world's most watched central-banking event, where Fed chairs signal policy shifts to global markets from a mountain lodge." },
+      { "period": "20th–21st century", "text": "The district's fortunes track wheat, cattle, and energy — the bank remains the Fed's specialist in agricultural and energy economics." }
+    ],
+    "today": "The Kansas City Fed speaks for the rural and energy economy inside the system, and once a year — via Jackson Hole — it hosts the stage from which the world's monetary policy is previewed.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Kansas City", "url": "https://www.kansascityfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Kansas City", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Kansas_City" }
+    ]
+  },
+  "Federal Reserve Bank of Dallas": {
+    "tagline": "The Eleventh District: the Texas Fed — oil, the border economy, and one of the fastest-growing districts in the system.",
+    "quickFacts": [
+      { "label": "District", "value": "11th — Texas, northern Louisiana, southern New Mexico" },
+      { "label": "Headquarters", "value": "2200 North Pearl Street, Dallas" },
+      { "label": "Branches", "value": "El Paso, Houston, San Antonio" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "Dallas wins the district in the era of cotton finance — oil would soon rewrite the region's economy entirely." },
+      { "period": "1980s", "text": "The Texas oil bust and savings-and-loan collapse devastate the district's banks; the cleanup makes the Dallas Fed a hard-won expert in banking crises." },
+      { "period": "1990s–present", "text": "NAFTA and its successors turn the district into the Fed's listening post on US–Mexico trade and border economics." }
+    ],
+    "today": "The Dallas Fed tracks the two forces that make its district unlike any other: the global energy market and the cross-border economy with Mexico. When oil moves, its research is where markets look for the regional read.",
+    "sources": [
+      { "title": "Federal Reserve Bank of Dallas", "url": "https://www.dallasfed.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of Dallas", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_Dallas" }
+    ]
+  },
+  "Federal Reserve Bank of San Francisco": {
+    "tagline": "The Twelfth District: the largest by far — nine states, the Pacific territories, and the world's tech economy.",
+    "quickFacts": [
+      { "label": "District", "value": "12th — Alaska, Arizona, California, Hawaii, Idaho, Nevada, Oregon, Utah, Washington, plus Pacific territories" },
+      { "label": "Headquarters", "value": "101 Market Street, San Francisco" },
+      { "label": "Branches", "value": "Los Angeles, Portland, Salt Lake City, Seattle" },
+      { "label": "Opened", "value": "November 16, 1914" }
+    ],
+    "timeline": [
+      { "period": "1914", "text": "San Francisco anchors a district covering the entire West — then a modest slice of the US economy, today its largest regional economy by output." },
+      { "period": "20th century", "text": "The district absorbs Alaska, Hawaii, and the Pacific territories after statehood and war reshape the map, becoming the Fed's window on the Pacific Rim." },
+      { "period": "1990s–present", "text": "Silicon Valley's rise gives the bank a front-row seat on the technology economy; its 2023 supervision of the Silicon Valley Bank failure becomes a case study in the challenges of overseeing tech-era banking." }
+    ],
+    "today": "Covering roughly a fifth of the US population and its most dynamic industries, the San Francisco Fed watches the economy's frontier — technology, trade with Asia, and Western housing markets — from the largest territory any Reserve Bank has ever had.",
+    "sources": [
+      { "title": "Federal Reserve Bank of San Francisco", "url": "https://www.frbsf.org/" },
+      { "title": "Federal Reserve History (St. Louis Fed)", "url": "https://www.federalreservehistory.org/" },
+      { "title": "Wikipedia: Federal Reserve Bank of San Francisco", "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_San_Francisco" }
+    ]
+  }
+}

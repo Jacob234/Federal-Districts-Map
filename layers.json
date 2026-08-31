@@ -26,6 +26,7 @@
       "file": "data/Courts_of_Appeals_Circuits.geojson",
       "branch": "Judicial",
       "nameField": "CIRCUIT_NAME",
+      "profilesFile": "content/courts_of_appeals.json",
       "enabledByDefault": true,
       "style": { "fillColor": "#4A90E2", "color": "#2C5AA0", "weight": 2.5, "fillOpacity": 0.35 },
       "education": {
@@ -112,6 +113,7 @@
       "department": "Independent central bank",
       "nameField": "NAME",
       "shortNameField": "District_Name",
+      "profilesFile": "content/federal_reserve.json",
       "enabledByDefault": true,
       "style": { "fillColor": "#FFA94D", "color": "#E67700", "weight": 2.5, "fillOpacity": 0.35 },
       "education": {

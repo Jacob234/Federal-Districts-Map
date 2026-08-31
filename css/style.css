@@ -14,6 +14,12 @@ html, body {
   inset: 0;
 }
 
+/* On desktop the sidebar occupies its own column so it never covers
+   popups or map controls; on mobile it becomes an overlay drawer. */
+@media (min-width: 721px) {
+  #map { left: 360px; }
+}
+
 /* ---------- Sidebar ---------- */
 
 #sidebar {
@@ -256,6 +262,165 @@ html, body {
 .popup-link { margin-top: 8px; font-size: 12.5px; }
 .popup-link a { color: #2980b9; text-decoration: none; font-weight: 600; }
 .popup-link a:hover { text-decoration: underline; }
+
+/* ---------- Profile panel ---------- */
+
+#profile-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 420px;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: -2px 0 14px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 1150;
+  padding: 20px 24px 40px;
+}
+
+#profile-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: #f5f7fa;
+  border: 1px solid #cfd8dc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 13px;
+  color: #546e7a;
+  cursor: pointer;
+}
+#profile-close:hover { background: #eceff1; }
+
+.profile-kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+#profile-content h2 {
+  margin: 4px 0 6px;
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+.profile-tagline {
+  font-size: 14px;
+  color: #546e7a;
+  font-style: italic;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.profile-facts {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+.profile-facts > div { margin-bottom: 8px; }
+.profile-facts > div:last-child { margin-bottom: 0; }
+.profile-facts dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #78909c;
+}
+.profile-facts dd { margin: 1px 0 0; font-size: 13px; color: #37474f; }
+
+#profile-content h3 {
+  font-size: 14px;
+  margin: 18px 0 8px;
+  color: #2980b9;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.profile-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 4px;
+  border-left: 3px solid #dbe4ea;
+}
+.profile-timeline li {
+  position: relative;
+  padding: 0 0 14px 16px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.profile-timeline li::before {
+  content: '';
+  position: absolute;
+  left: -7.5px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #3498db;
+  border: 2px solid #fff;
+}
+.timeline-period {
+  display: block;
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 12.5px;
+}
+.timeline-text { color: #455a64; }
+
+.profile-today { font-size: 13.5px; line-height: 1.6; color: #37474f; }
+
+.profile-sources {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+.profile-sources a { color: #2980b9; text-decoration: none; }
+.profile-sources a:hover { text-decoration: underline; }
+
+.profile-loading { color: #78909c; font-size: 13px; }
+
+.profile-copy {
+  background: none;
+  border: 1px solid #b0bec5;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #546e7a;
+  cursor: pointer;
+}
+.profile-copy:hover { background: #eceff1; }
+
+.profile-btn {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.profile-btn:hover { filter: brightness(1.08); }
+
+.profile-btn-inline {
+  display: inline-block;
+  width: auto;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 11.5px;
+}
+
+@media (max-width: 720px) {
+  #profile-panel { width: 100%; }
+}
 
 /* ---------- Search pin ---------- */
 

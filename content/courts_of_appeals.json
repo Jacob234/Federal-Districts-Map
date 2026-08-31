@@ -1,0 +1,248 @@
+{
+  "_about": "District profiles for the US Courts of Appeals layer. Keys match the CIRCUIT_NAME property in the GeoJSON. Drafted from public histories; each profile lists its sources.",
+  "First Circuit": {
+    "tagline": "The smallest circuit — New England plus Puerto Rico, seated in Boston.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Maine, Massachusetts, New Hampshire, Rhode Island, Puerto Rico" },
+      { "label": "Headquarters", "value": "John Joseph Moakley US Courthouse, Boston" },
+      { "label": "Authorized judgeships", "value": "6 — the fewest of any circuit" },
+      { "label": "Established", "value": "1891 (Evarts Act)" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act, which established the courts of appeals to relieve a Supreme Court drowning in mandatory appeals." },
+      { "period": "1915", "text": "Puerto Rico's federal district court is placed under the First Circuit, giving the New England circuit a Caribbean reach it retains today." },
+      { "period": "1980–1990", "text": "Stephen Breyer serves on the court (chief judge 1990–94) before his appointment to the Supreme Court; David Souter sits briefly in 1990 before his own elevation." }
+    ],
+    "today": "With only six authorized judgeships, the First Circuit is the federal appellate system at its most intimate — yet its rulings bind about 14 million people, and its Puerto Rico docket gives it an outsized role in questions about the constitutional status of US territories.",
+    "sources": [
+      { "title": "US Court of Appeals for the First Circuit (official site)", "url": "https://www.ca1.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the First Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_First_Circuit" }
+    ]
+  },
+  "Second Circuit": {
+    "tagline": "Wall Street's court of appeals — and the professional home of Learned Hand, Thurgood Marshall, and Sonia Sotomayor.",
+    "quickFacts": [
+      { "label": "Covers", "value": "New York, Connecticut, Vermont" },
+      { "label": "Headquarters", "value": "Thurgood Marshall US Courthouse, Foley Square, Manhattan" },
+      { "label": "Authorized judgeships", "value": "13" },
+      { "label": "Established", "value": "1891 (Evarts Act)" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act; its Manhattan seat immediately makes it the nation's leading commercial-law appeals court." },
+      { "period": "1920s–1950s", "text": "The era of Learned Hand — widely called the greatest judge never to sit on the Supreme Court — whose opinions on negligence, free speech, and antitrust are still taught in every law school." },
+      { "period": "1961", "text": "Thurgood Marshall joins the court, six years before becoming the first Black Supreme Court justice." },
+      { "period": "1998", "text": "Sonia Sotomayor is elevated to the circuit, where she serves until her 2009 Supreme Court appointment." }
+    ],
+    "today": "Because it sits atop the Southern District of New York, the Second Circuit effectively supervises much of American securities, banking, and white-collar criminal law. When a financial-fraud case makes national news, this is usually the appeals court behind it.",
+    "sources": [
+      { "title": "US Court of Appeals for the Second Circuit (official site)", "url": "https://www.ca2.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Second Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Second_Circuit" }
+    ]
+  },
+  "Third Circuit": {
+    "tagline": "Philadelphia's circuit reaches from the Jersey Shore to the Virgin Islands — and hears the appeals of corporate America's home state, Delaware.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Pennsylvania, New Jersey, Delaware, US Virgin Islands" },
+      { "label": "Headquarters", "value": "James A. Byrne US Courthouse, Philadelphia" },
+      { "label": "Authorized judgeships", "value": "14" },
+      { "label": "Established", "value": "1891 (Evarts Act)" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act, covering the mid-Atlantic states." },
+      { "period": "1948", "text": "The District Court of the Virgin Islands is placed under the Third Circuit, extending its jurisdiction into the Caribbean." },
+      { "period": "1990–2006", "text": "Samuel Alito serves fifteen years on the circuit before his Supreme Court appointment." }
+    ],
+    "today": "Because most large American corporations are chartered in Delaware and many file bankruptcy there, the Third Circuit has become a quiet superpower in corporate and bankruptcy law: its rulings shape how mega-bankruptcies and shareholder fights play out nationwide.",
+    "sources": [
+      { "title": "US Court of Appeals for the Third Circuit (official site)", "url": "https://www.ca3.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Third Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Third_Circuit" }
+    ]
+  },
+  "Fourth Circuit": {
+    "tagline": "Richmond's circuit spans the mid-Atlantic and Appalachia — and has swung across the ideological spectrum within living memory.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Maryland, Virginia, West Virginia, North Carolina, South Carolina" },
+      { "label": "Headquarters", "value": "Lewis F. Powell Jr. US Courthouse, Richmond" },
+      { "label": "Authorized judgeships", "value": "15" },
+      { "label": "Established", "value": "1891 (Evarts Act)" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act, seated in the former capital of the Confederacy — a location that would matter during the civil-rights era." },
+      { "period": "1950s–1960s", "text": "The circuit hears a stream of school-desegregation cases implementing Brown v. Board across Virginia and the Carolinas, including the fallout from Virginia's 'massive resistance' campaign." },
+      { "period": "1990s–2000s", "text": "Widely described as the most conservative federal appeals court; several of its national-security rulings after 9/11 reach the Supreme Court." },
+      { "period": "2010s", "text": "A wave of new appointments shifts the court's center of gravity, a reminder that a circuit's character is only ever one presidency away from changing." }
+    ],
+    "today": "Sitting between Washington and the South, the Fourth Circuit regularly draws high-profile cases involving federal agencies headquartered in Maryland and Virginia — including, in recent years, some of the country's most watched immigration and voting-rights appeals.",
+    "sources": [
+      { "title": "US Court of Appeals for the Fourth Circuit (official site)", "url": "https://www.ca4.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Fourth Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Fourth_Circuit" }
+    ]
+  },
+  "Fifth Circuit": {
+    "tagline": "New Orleans' circuit helped desegregate the South — then grew so large Congress had to split it in two.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Texas, Louisiana, Mississippi" },
+      { "label": "Headquarters", "value": "John Minor Wisdom US Courthouse, New Orleans" },
+      { "label": "Authorized judgeships", "value": "17" },
+      { "label": "Established", "value": "1891 (Evarts Act); reorganized 1981" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act, originally covering six states of the Deep South from Texas to Florida." },
+      { "period": "1950s–1960s", "text": "The court becomes the front line of desegregation. A bloc of judges — Elbert Tuttle, John Minor Wisdom, Richard Rives, and John R. Brown, remembered as 'The Four' — enforces Brown v. Board across the resisting South, at real personal cost." },
+      { "period": "1980–1981", "text": "With over two dozen judges and an unmanageable caseload, Congress passes the Fifth Circuit Court of Appeals Reorganization Act: Alabama, Georgia, and Florida split off to form the new Eleventh Circuit on October 1, 1981." },
+      { "period": "2000s–present", "text": "Now covering the Gulf oil economy and the busiest stretch of the southern border, the circuit's immigration and energy-regulation docket makes it one of the most consequential — and most argued-about — courts in the country." }
+    ],
+    "today": "The modern Fifth Circuit is a frequent first stop for challenges to federal regulations, and its rulings on immigration, administrative power, and energy policy regularly set up Supreme Court showdowns. Its earlier civil-rights history remains one of the most storied chapters in American judicial history.",
+    "sources": [
+      { "title": "US Court of Appeals for the Fifth Circuit (official site)", "url": "https://www.ca5.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Fifth Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Fifth_Circuit" }
+    ]
+  },
+  "Sixth Circuit": {
+    "tagline": "Cincinnati's circuit once employed a future president — and today referees some of the nation's closest legal fights across four swing-region states.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Michigan, Ohio, Kentucky, Tennessee" },
+      { "label": "Headquarters", "value": "Potter Stewart US Courthouse, Cincinnati" },
+      { "label": "Authorized judgeships", "value": "16" },
+      { "label": "Established", "value": "1891 (Evarts Act)" }
+    ],
+    "timeline": [
+      { "period": "1892–1900", "text": "William Howard Taft serves as a Sixth Circuit judge — the only person to later lead both the executive branch (as President) and the judiciary (as Chief Justice)." },
+      { "period": "1954–1958", "text": "Potter Stewart sits on the circuit before his Supreme Court appointment; the Cincinnati courthouse now bears his name." },
+      { "period": "2015", "text": "The circuit's ruling in the consolidated same-sex-marriage cases creates the circuit split that brings Obergefell v. Hodges — a case from within its own borders — to the Supreme Court." }
+    ],
+    "today": "Straddling the industrial Midwest and upper South, the Sixth Circuit hears the appeals of a region whose politics are perpetually contested — and its own decisions, from marriage to labor law, have repeatedly forced national questions to a final answer.",
+    "sources": [
+      { "title": "US Court of Appeals for the Sixth Circuit (official site)", "url": "https://www.ca6.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Sixth Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Sixth_Circuit" }
+    ]
+  },
+  "Seventh Circuit": {
+    "tagline": "Chicago's circuit — famous for the law-and-economics revolution and some of the most-cited judges in American history.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Illinois, Indiana, Wisconsin" },
+      { "label": "Headquarters", "value": "Everett McKinley Dirksen US Courthouse, Chicago" },
+      { "label": "Authorized judgeships", "value": "11" },
+      { "label": "Established", "value": "1891 (Evarts Act)" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act for the industrial Great Lakes states." },
+      { "period": "1970", "text": "John Paul Stevens joins the circuit, five years before beginning a 35-year Supreme Court tenure." },
+      { "period": "1981–2017", "text": "Richard Posner's tenure (joined by Frank Easterbrook in 1985) makes the Seventh Circuit the home court of the law-and-economics movement; Posner becomes the most-cited legal scholar of the 20th century while sitting as an active judge." }
+    ],
+    "today": "The Seventh Circuit built a reputation as the federal judiciary's intellectual laboratory — a court whose opinions are read nationally for their reasoning as much as their results, shaping antitrust, contracts, and regulatory law far beyond the Midwest.",
+    "sources": [
+      { "title": "US Court of Appeals for the Seventh Circuit (official site)", "url": "https://www.ca7.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Seventh Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Seventh_Circuit" }
+    ]
+  },
+  "Eighth Circuit": {
+    "tagline": "From St. Louis, a seven-state circuit spanning the farm belt and the northern plains — once so big it birthed the Tenth.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Arkansas, Iowa, Minnesota, Missouri, Nebraska, North Dakota, South Dakota" },
+      { "label": "Headquarters", "value": "Thomas F. Eagleton US Courthouse, St. Louis" },
+      { "label": "Authorized judgeships", "value": "11" },
+      { "label": "Established", "value": "1891 (Evarts Act); split 1929" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act as the largest circuit by area, stretching from the Mississippi to the Rockies." },
+      { "period": "1929", "text": "Congress splits the sprawling circuit, carving the mountain states into the new Tenth Circuit." },
+      { "period": "1957–1958", "text": "The circuit hears the Little Rock school-desegregation litigation; the Supreme Court's resulting Cooper v. Aaron affirms that state officials are bound by its constitutional rulings." },
+      { "period": "1959–1970", "text": "Harry Blackmun, later author of Roe v. Wade, serves on the circuit." }
+    ],
+    "today": "The Eighth Circuit's docket reflects its geography — agriculture, tribal law, and railroads alongside the ordinary run of federal cases — and its rulings govern a region stretching from the Ozarks to the Canadian border.",
+    "sources": [
+      { "title": "US Court of Appeals for the Eighth Circuit (official site)", "url": "https://www.ca8.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Eighth Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Eighth_Circuit" }
+    ]
+  },
+  "Ninth Circuit": {
+    "tagline": "The giant of the federal judiciary — nine states, two Pacific territories, and one in five Americans, with split proposals debated for over 80 years.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Alaska, Arizona, California, Hawaii, Idaho, Montana, Nevada, Oregon, Washington, Guam, Northern Mariana Islands" },
+      { "label": "Headquarters", "value": "James R. Browning US Courthouse, San Francisco" },
+      { "label": "Authorized judgeships", "value": "29 — by far the most of any circuit" },
+      { "label": "Established", "value": "1891 (Evarts Act)" }
+    ],
+    "timeline": [
+      { "period": "1891", "text": "Created by the Evarts Act for the Pacific states — then a thinly populated frontier circuit." },
+      { "period": "20th century", "text": "California's explosive growth transforms the circuit into the nation's largest; Pacific territories are added to its jurisdiction after World War II." },
+      { "period": "1941–present", "text": "Congress repeatedly studies splitting the circuit — proposals surface in nearly every decade — but no split has ever passed, leaving one court to serve about 20% of the US population." },
+      { "period": "1980s–present", "text": "With Silicon Valley and Hollywood in its territory, the circuit becomes the de facto national court for technology, copyright, and internet law." }
+    ],
+    "today": "The Ninth Circuit decides more appeals than any other circuit, and because its territory contains the tech industry, the entertainment industry, and most Pacific immigration gateways, its rulings on speech, privacy, and immigration are felt nationwide. It is also the circuit the Supreme Court reviews — and reverses — most often, largely a function of its sheer volume.",
+    "sources": [
+      { "title": "US Court of Appeals for the Ninth Circuit (official site)", "url": "https://www.ca9.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Ninth Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Ninth_Circuit" }
+    ]
+  },
+  "Tenth Circuit": {
+    "tagline": "Denver's mountain-west circuit, carved from the Eighth in 1929, where federal land and tribal law loom large.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Colorado, Kansas, New Mexico, Oklahoma, Utah, Wyoming" },
+      { "label": "Headquarters", "value": "Byron White US Courthouse, Denver" },
+      { "label": "Authorized judgeships", "value": "12" },
+      { "label": "Established", "value": "1929 (split from the Eighth Circuit)" }
+    ],
+    "timeline": [
+      { "period": "1929", "text": "Congress splits the oversized Eighth Circuit; the six mountain and plains states become the new Tenth, seated in Denver." },
+      { "period": "2006–2017", "text": "Neil Gorsuch serves on the circuit before his Supreme Court appointment." },
+      { "period": "2020", "text": "The circuit's ruling in the McGirt litigation — affirmed by the Supreme Court — recognizes that much of eastern Oklahoma remains reservation land, one of the most consequential tribal-sovereignty decisions in a century." }
+    ],
+    "today": "With vast federal landholdings, dozens of tribal nations, and the energy economy of the interior West in its territory, the Tenth Circuit's everyday work — water rights, public lands, Indian law — looks unlike any eastern court's docket.",
+    "sources": [
+      { "title": "US Court of Appeals for the Tenth Circuit (official site)", "url": "https://www.ca10.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Tenth Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Tenth_Circuit" }
+    ]
+  },
+  "Eleventh Circuit": {
+    "tagline": "The youngest regional circuit — born in 1981 when the old Fifth grew too big — covering the booming Southeast from Atlanta.",
+    "quickFacts": [
+      { "label": "Covers", "value": "Alabama, Florida, Georgia" },
+      { "label": "Headquarters", "value": "Elbert P. Tuttle US Courthouse, Atlanta" },
+      { "label": "Authorized judgeships", "value": "12" },
+      { "label": "Established", "value": "October 1, 1981" }
+    ],
+    "timeline": [
+      { "period": "1981", "text": "The Fifth Circuit Court of Appeals Reorganization Act takes effect: Alabama, Georgia, and Florida become the new Eleventh Circuit, inheriting the old Fifth's case law as binding precedent." },
+      { "period": "1981", "text": "Its Atlanta courthouse is named for Elbert Tuttle, the chief judge who led the old Fifth Circuit's enforcement of desegregation." },
+      { "period": "2000", "text": "The circuit sits at the center of the Elián González custody controversy and, weeks later, the Bush v. Gore recount litigation — a reminder that Florida cases can decide national history." }
+    ],
+    "today": "Serving one of the fastest-growing regions in the country, the Eleventh Circuit handles an enormous criminal and immigration docket — and, with several nationally watched cases arising from Florida and Georgia in recent years, it is rarely out of the news for long.",
+    "sources": [
+      { "title": "US Court of Appeals for the Eleventh Circuit (official site)", "url": "https://www.ca11.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the Eleventh Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Eleventh_Circuit" }
+    ]
+  },
+  "DC Circuit": {
+    "tagline": "One city, outsized power: the court that reviews the federal government itself, and the traditional proving ground for Supreme Court justices.",
+    "quickFacts": [
+      { "label": "Covers", "value": "The District of Columbia only" },
+      { "label": "Headquarters", "value": "E. Barrett Prettyman US Courthouse, Washington, DC" },
+      { "label": "Authorized judgeships", "value": "11" },
+      { "label": "Established", "value": "1893 (as the Court of Appeals of the District of Columbia)" }
+    ],
+    "timeline": [
+      { "period": "1893", "text": "Congress creates an appeals court for the capital; it later becomes a full US Court of Appeals." },
+      { "period": "1930s–1970s", "text": "As the administrative state grows, Congress routes review of many federal agency actions directly to the DC Circuit, making it the nation's regulatory supreme court in all but name." },
+      { "period": "1970s–present", "text": "The court becomes the leading feeder to the Supreme Court: Burger, Scalia, Ginsburg, Thomas, Roberts, Kavanaugh, and Jackson all served here first." }
+    ],
+    "today": "The DC Circuit's territory is the smallest of any circuit, but its docket — EPA rules, FCC orders, labor-board decisions, separation-of-powers fights — makes it arguably the second most powerful court in the country. If a federal regulation affects your life, there's a good chance this court reviewed it.",
+    "sources": [
+      { "title": "US Court of Appeals for the DC Circuit (official site)", "url": "https://www.cadc.uscourts.gov/" },
+      { "title": "Federal Judicial Center — court histories", "url": "https://www.fjc.gov/history/courts" },
+      { "title": "Wikipedia: United States Court of Appeals for the District of Columbia Circuit", "url": "https://en.wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_District_of_Columbia_Circuit" }
+    ]
+  }
+}
