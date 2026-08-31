@@ -1,0 +1,236 @@
+{
+  "branches": {
+    "Judicial": {
+      "label": "Judicial Branch",
+      "icon": "⚖️",
+      "color": "#4A90E2",
+      "blurb": "Interprets laws and ensures they comply with the Constitution."
+    },
+    "Executive": {
+      "label": "Executive Branch",
+      "icon": "🏛️",
+      "color": "#2F9E44",
+      "blurb": "Enforces laws and administers federal programs."
+    },
+    "Military": {
+      "label": "Military / Defense",
+      "icon": "🛡️",
+      "color": "#0B7285",
+      "blurb": "Protects national security under civilian control."
+    }
+  },
+  "layers": [
+    {
+      "id": "courts_of_appeals",
+      "name": "Courts of Appeals Circuits",
+      "file": "data/Courts_of_Appeals_Circuits.geojson",
+      "branch": "Judicial",
+      "nameField": "CIRCUIT_NAME",
+      "enabledByDefault": true,
+      "style": { "fillColor": "#4A90E2", "color": "#2C5AA0", "weight": 2.5, "fillOpacity": 0.35 },
+      "education": {
+        "title": "Federal Appellate Courts",
+        "description": "The US is divided into 12 regional circuits (11 numbered plus the DC Circuit). A 13th, the Federal Circuit, has nationwide jurisdiction over specialized cases and is not shown on the map.",
+        "purpose": "Review decisions from district courts and ensure consistent application of federal law across the country.",
+        "established": "1891 (Evarts Act)",
+        "whyItMatters": "Circuit courts create binding precedents that affect millions of people. Conflicts between circuits often lead to Supreme Court review."
+      },
+      "officialLink": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "featureLinks": {
+        "First Circuit": "https://www.ca1.uscourts.gov/",
+        "Second Circuit": "https://www.ca2.uscourts.gov/",
+        "Third Circuit": "https://www.ca3.uscourts.gov/",
+        "Fourth Circuit": "https://www.ca4.uscourts.gov/",
+        "Fifth Circuit": "https://www.ca5.uscourts.gov/",
+        "Sixth Circuit": "https://www.ca6.uscourts.gov/",
+        "Seventh Circuit": "https://www.ca7.uscourts.gov/",
+        "Eighth Circuit": "https://www.ca8.uscourts.gov/",
+        "Ninth Circuit": "https://www.ca9.uscourts.gov/",
+        "Tenth Circuit": "https://www.ca10.uscourts.gov/",
+        "Eleventh Circuit": "https://www.ca11.uscourts.gov/",
+        "DC Circuit": "https://www.cadc.uscourts.gov/"
+      }
+    },
+    {
+      "id": "bankruptcy_courts",
+      "name": "Bankruptcy Courts (grouped by circuit)",
+      "file": "data/Bankruptcy_Courts.geojson",
+      "branch": "Judicial",
+      "nameField": "COURT_NAME",
+      "enabledByDefault": false,
+      "style": { "fillColor": "#7B68EE", "color": "#483D8B", "weight": 2, "fillOpacity": 0.3 },
+      "education": {
+        "title": "Federal Bankruptcy System",
+        "description": "Specialized federal courts handling bankruptcy cases. There are 90 bankruptcy courts, organized within the 94 federal judicial districts. This map currently groups them at the circuit level; district-level boundaries are planned.",
+        "purpose": "Provide relief to debtors and fair distribution to creditors under federal bankruptcy law.",
+        "established": "1898 (Bankruptcy Act)",
+        "whyItMatters": "Hundreds of thousands of bankruptcy cases are filed annually, affecting individuals, families, and businesses nationwide."
+      },
+      "officialLink": "https://www.uscourts.gov/services-forms/bankruptcy"
+    },
+    {
+      "id": "fema_regions",
+      "name": "FEMA Regions",
+      "file": "data/FEMA_Regions.geojson",
+      "branch": "Executive",
+      "department": "Department of Homeland Security",
+      "nameField": "EPAREGION",
+      "enabledByDefault": true,
+      "style": { "fillColor": "#FF6B6B", "color": "#C92A2A", "weight": 2.5, "fillOpacity": 0.35 },
+      "education": {
+        "title": "Federal Emergency Management",
+        "description": "FEMA divides the US into 10 regions to coordinate disaster response and emergency management.",
+        "purpose": "Coordinate federal disaster response, provide aid to states during emergencies, and support disaster preparedness.",
+        "established": "1979 (independent agency, part of DHS since 2003)",
+        "whyItMatters": "FEMA responds to hurricanes, floods, wildfires, and other disasters affecting millions of Americans annually."
+      },
+      "officialLink": "https://www.fema.gov/about/organization/regions"
+    },
+    {
+      "id": "epa_regions",
+      "name": "EPA Regions",
+      "file": "data/EPA_Regions.geojson",
+      "branch": "Executive",
+      "department": "Independent agency",
+      "nameField": "EPAREGION",
+      "enabledByDefault": false,
+      "style": { "fillColor": "#51CF66", "color": "#2F9E44", "weight": 2, "fillOpacity": 0.3 },
+      "education": {
+        "title": "Environmental Protection",
+        "description": "The EPA uses 10 regions to enforce environmental laws and regulations. This 10-region layout is the federal government's standard regional system, shared by many agencies.",
+        "purpose": "Protect human health and the environment by enforcing regulations on air, water, and land quality.",
+        "established": "1970 (Nixon administration)",
+        "whyItMatters": "The EPA sets standards for clean air and water that affect every American, and enforces laws like the Clean Air Act."
+      },
+      "officialLink": "https://www.epa.gov/aboutepa/regional-and-geographic-offices"
+    },
+    {
+      "id": "federal_reserve",
+      "name": "Federal Reserve Districts",
+      "file": "data/Federal_Reserve_Districts.geojson",
+      "branch": "Executive",
+      "department": "Independent central bank",
+      "nameField": "NAME",
+      "shortNameField": "District_Name",
+      "enabledByDefault": true,
+      "style": { "fillColor": "#FFA94D", "color": "#E67700", "weight": 2.5, "fillOpacity": 0.35 },
+      "education": {
+        "title": "America's Central Bank",
+        "description": "The Federal Reserve System divides the US into 12 districts, each served by a regional Federal Reserve Bank. The Fed is an independent central bank — it operates within the government but its monetary policy decisions do not require approval by the President or Congress.",
+        "purpose": "Conduct monetary policy, supervise banks, maintain financial stability, and provide payment services.",
+        "established": "1913 (Federal Reserve Act)",
+        "whyItMatters": "The Fed's decisions on interest rates ripple through the entire economy, from mortgage rates to job markets. District boundaries still reflect the economic geography of 1913."
+      },
+      "officialLink": "https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm",
+      "featureLinks": {
+        "Federal Reserve Bank of Boston": "https://www.bostonfed.org/",
+        "Federal Reserve Bank of New York": "https://www.newyorkfed.org/",
+        "Federal Reserve Bank of Philadelphia": "https://www.philadelphiafed.org/",
+        "Federal Reserve Bank of Cleveland": "https://www.clevelandfed.org/",
+        "Federal Reserve Bank of Richmond": "https://www.richmondfed.org/",
+        "Federal Reserve Bank of Atlanta": "https://www.atlantafed.org/",
+        "Federal Reserve Bank of Chicago": "https://www.chicagofed.org/",
+        "Federal Reserve Bank of St. Louis": "https://www.stlouisfed.org/",
+        "Federal Reserve Bank of Minneapolis": "https://www.minneapolisfed.org/",
+        "Federal Reserve Bank of Kansas City": "https://www.kansascityfed.org/",
+        "Federal Reserve Bank of Dallas": "https://www.dallasfed.org/",
+        "Federal Reserve Bank of San Francisco": "https://www.frbsf.org/"
+      }
+    },
+    {
+      "id": "census_regions",
+      "name": "Census Regions",
+      "file": "data/Census_Regions.geojson",
+      "branch": "Executive",
+      "department": "Department of Commerce",
+      "nameField": "NAME",
+      "enabledByDefault": false,
+      "style": { "fillColor": "#FF8787", "color": "#C92A2A", "weight": 3, "fillOpacity": 0.25 },
+      "education": {
+        "title": "National Demographics",
+        "description": "The Census Bureau divides the US into 4 major regions: Northeast, Midwest, South, and West.",
+        "purpose": "Organize demographic data collection and analysis for the constitutionally mandated census.",
+        "established": "1910 (current boundaries)",
+        "whyItMatters": "Census data determines congressional representation, electoral votes, and how roughly $1.5 trillion in federal funds is distributed each year."
+      },
+      "officialLink": "https://www.census.gov/programs-surveys/economic-census/guidance-geographies/levels.html"
+    },
+    {
+      "id": "census_divisions",
+      "name": "Census Divisions",
+      "file": "data/Census_Divisions.geojson",
+      "branch": "Executive",
+      "department": "Department of Commerce",
+      "nameField": "NAME",
+      "enabledByDefault": false,
+      "style": { "fillColor": "#FFB3B3", "color": "#E03131", "weight": 2, "fillOpacity": 0.25 },
+      "education": {
+        "title": "Regional Demographics",
+        "description": "9 divisions nested within the 4 census regions: New England, Middle Atlantic, East/West North Central, South Atlantic, East/West South Central, Mountain, and Pacific.",
+        "purpose": "Provide more detailed regional analysis of population, economy, and social characteristics.",
+        "established": "1910 (current boundaries)",
+        "whyItMatters": "Division-level data helps track regional economic and demographic trends across America."
+      },
+      "officialLink": "https://www.census.gov/programs-surveys/economic-census/guidance-geographies/levels.html"
+    },
+    {
+      "id": "education_regions",
+      "name": "Dept. of Education Regions",
+      "file": "data/Education_Regions.geojson",
+      "branch": "Executive",
+      "department": "Department of Education",
+      "nameField": "EPAREGION",
+      "enabledByDefault": false,
+      "style": { "fillColor": "#74C0FC", "color": "#1C7ED6", "weight": 2, "fillOpacity": 0.3 },
+      "education": {
+        "title": "Federal Education Administration",
+        "description": "The Department of Education uses the standard federal 10-region system (the same layout as EPA and FEMA) to administer its programs.",
+        "purpose": "Distribute federal education funding, enforce civil rights in schools, and collect education data.",
+        "established": "1980 (cabinet-level department)",
+        "whyItMatters": "The department manages tens of billions of dollars in K-12 funding and the federal student loan programs affecting millions of students."
+      },
+      "officialLink": "https://www.ed.gov/"
+    },
+    {
+      "id": "blm_districts",
+      "name": "BLM Administrative Units",
+      "file": "data/BLM_Districts.geojson",
+      "branch": "Executive",
+      "department": "Department of the Interior",
+      "nameField": "Label_Full_Name",
+      "fallbackNameFields": ["ADMU_NAME"],
+      "enabledByDefault": false,
+      "style": { "fillColor": "#A0C287", "color": "#5F7C3E", "weight": 1.5, "fillOpacity": 0.3 },
+      "education": {
+        "title": "Public Lands Management",
+        "description": "The Bureau of Land Management manages about 245 million acres of public land — roughly 1/10 of the US — through a hierarchy of 12 state offices and about 200 district and field offices, mostly in western states.",
+        "purpose": "Manage public lands for multiple uses: energy development, grazing, recreation, and conservation.",
+        "established": "1946 (merger of Grazing Service and General Land Office)",
+        "whyItMatters": "BLM manages more land than any other federal agency, balancing economic use with conservation."
+      },
+      "officialLink": "https://www.blm.gov/office/national-office"
+    },
+    {
+      "id": "coast_guard",
+      "name": "Coast Guard Districts",
+      "file": "data/Coast_Guard_Districts.geojson",
+      "branch": "Military",
+      "department": "Department of Homeland Security",
+      "nameField": "DistrictName",
+      "subtitleFields": [
+        { "label": "District", "field": "DistrictId" },
+        { "label": "Headquarters", "field": "Office" }
+      ],
+      "enabledByDefault": false,
+      "style": { "fillColor": "#3BC9DB", "color": "#0B7285", "weight": 2.5, "fillOpacity": 0.35 },
+      "education": {
+        "title": "Maritime Defense & Safety",
+        "description": "9 Coast Guard districts cover US coastlines, the Great Lakes, and inland waterways. In peacetime the Coast Guard operates under DHS rather than the Department of Defense.",
+        "purpose": "Maritime law enforcement, search and rescue, environmental protection, and coastal security.",
+        "established": "1915 (merger of Revenue Cutter Service and Life-Saving Service)",
+        "whyItMatters": "The Coast Guard saves thousands of lives annually and enforces laws across 95,000 miles of coastline."
+      },
+      "officialLink": "https://www.uscg.mil/"
+    }
+  ]
+}
