@@ -420,7 +420,16 @@
         "established": "1870 (Army Signal Service); named the National Weather Service in 1970",
         "whyItMatters": "Every tornado, hurricane, and flash flood warning you receive starts at an NWS forecast office, and private weather apps are built on NWS data."
       },
-      "officialLink": "https://www.weather.gov/organization"
+      "officialLink": "https://www.weather.gov/organization",
+      "featureLinkLabel": "Visit the NWS {name} website",
+      "featureLinks": {
+        "Eastern Region": "https://www.weather.gov/erh/",
+        "Southern Region": "https://www.weather.gov/srh/",
+        "Central Region": "https://www.weather.gov/crh/",
+        "Western Region": "https://www.weather.gov/wrh/",
+        "Alaska Region": "https://www.weather.gov/arh/",
+        "Pacific Region": "https://www.weather.gov/prh/"
+      }
     },
     {
       "id": "coast_guard",
@@ -476,7 +485,17 @@
         "established": "1802 (Corps of Engineers); civil works since 1824",
         "whyItMatters": "Corps dams, levees, and dredged channels shape where floods go and how goods move, from the Mississippi barge lanes to the nation's largest ports."
       },
-      "officialLink": "https://www.usace.army.mil/Locations/"
+      "officialLink": "https://www.usace.army.mil/Locations/",
+      "featureLinks": {
+        "Great Lakes and Ohio River Division": "https://www.lrd.usace.army.mil/",
+        "Mississippi Valley Division": "https://www.mvd.usace.army.mil/",
+        "North Atlantic Division": "https://www.nad.usace.army.mil/",
+        "Northwestern Division": "https://www.nwd.usace.army.mil/",
+        "Pacific Ocean Division": "https://www.pod.usace.army.mil/",
+        "South Atlantic Division": "https://www.sad.usace.army.mil/",
+        "South Pacific Division": "https://www.spd.usace.army.mil/",
+        "Southwestern Division": "https://www.swd.usace.army.mil/"
+      }
     }
   ]
 }
