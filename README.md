@@ -15,7 +15,7 @@ federal government's geography.**
 - **"Use my location"** — one-tap district lookup via browser geolocation
 - **Printable report** — after a search, print (or save as PDF) a "your federal
   government" report listing every district by branch, with links spelled out
-- **11 district systems** across the Judicial, Executive, and Military branches
+- **15 district systems** across the Judicial, Executive, and Military branches
 - **Educational popups** — click any region for its purpose, history, and why it
   matters, with links to official resources (each district court, appeals circuit,
   Federal Reserve bank, FEMA and EPA region, and Coast Guard district links to its
@@ -40,7 +40,11 @@ federal government's geography.**
 | 🏛️ Executive | Census Divisions | 9 |
 | 🏛️ Executive | Dept. of Education Regions | 10 |
 | 🏛️ Executive | BLM Administrative Units | 220 |
+| 🏛️ Executive | US Attorney Districts³ | 93 |
+| 🏛️ Executive | HHS Regions | 10 |
+| 🏛️ Executive | National Weather Service Regions⁴ | 6 |
 | 🛡️ Military | Coast Guard Districts | 9 |
+| 🛡️ Military | Army Corps of Engineers Divisions⁴ | 8 |
 
 ¹ The 90 bankruptcy courts follow the 94 federal judicial districts; this map
 currently shows them grouped at the circuit level. District-level boundaries are
@@ -49,7 +53,12 @@ planned.
 Executive branch for navigation.
 ³ Built from Census county boundaries and the county lists in 28 U.S.C.
 §§ 81–131 by `scripts/build_district_courts.py`. American Samoa has no district
-court and is not shown.
+court and is not shown. The US Attorney districts reuse these boundaries; one
+US Attorney serves both Guam and the Northern Mariana Islands.
+⁴ Built by `scripts/build_agency_layers.py`, along with US Attorney districts and
+HHS regions. NWS regions follow the counties each forecast office covers. Army
+Corps divisions follow river basins and come from the USACE Civil Works
+Divisions service, generalized to about 5 km.
 
 ## Running locally
 
@@ -71,9 +80,10 @@ landing.html        # Introduction page
 layers.json         # Layer registry: files, styles, educational content, links
 js/app.js           # All application logic (Leaflet, search, point-in-polygon)
 css/style.css       # Styles
-data/*.geojson      # Optimized district boundaries (~2.8 MB total)
+data/*.geojson      # Optimized district boundaries (~5 MB total)
 scripts/optimize_data.py  # Simplifies raw agency GeoJSON (needs geopandas)
 scripts/build_district_courts.py  # Builds the 94 district courts from county lists
+scripts/build_agency_layers.py    # Builds US Attorney, HHS, NWS and Army Corps layers
 ```
 
 ## Adding a new district system
@@ -107,8 +117,6 @@ Settings → Pages → deploy from the `main` branch, and the map is live at
 ## Roadmap
 
 - Bankruptcy courts at the district level, reusing the district court boundaries (fixes footnote ¹)
-- More agencies: US Attorney districts, HHS regions, Army Corps divisions,
-  National Weather Service regions
 - Per-district official links for more systems
 - Printable "your federal government" report after an address search
 
