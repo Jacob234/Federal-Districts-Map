@@ -421,22 +421,40 @@ function renderResults(label, matches) {
 //
 // Built after every lookup into #print-report, which the print stylesheet
 // shows in place of the map and sidebar. Unlike the sidebar cards it spells
-// out each link's URL, since a link can't be clicked on paper.
+// out each link's URL, since a link can't be clicked on paper. Built with DOM
+// calls and textContent rather than an HTML string, so nothing from the
+// address or the data files is ever parsed as markup.
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+// A line like "<strong>Label:</strong> value"
+function labelledEl(tag, className, label, value) {
+  const node = el(tag, className);
+  node.append(el('strong', null, `${label}:`), ` ${value}`);
+  return node;
+}
 
 function renderPrintReport(label, matches) {
   const report = document.getElementById('print-report');
   document.getElementById('print-btn').hidden = !matches.length;
 
   const generated = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-  let html = `<header class="report-header">`;
-  html += `<div class="report-kicker">US Federal Districts</div>`;
-  html += `<h1>Your Federal Government</h1>`;
-  html += `<p class="report-address">📍 ${escapeHtml(label)}</p>`;
-  html += `<p class="report-meta">Generated ${escapeHtml(generated)} · ${matches.length} federal district${matches.length === 1 ? '' : 's'}</p>`;
-  html += `</header>`;
+  const header = el('header', 'report-header');
+  header.append(
+    el('div', 'report-kicker', 'US Federal Districts'),
+    el('h1', null, 'Your Federal Government'),
+    el('p', 'report-address', `📍 ${label}`),
+    el('p', 'report-meta', `Generated ${generated} · ${matches.length} federal district${matches.length === 1 ? '' : 's'}`),
+  );
+  const parts = [header];
 
   if (!matches.length) {
-    html += '<p>No federal districts were found at this location. It may be outside the US or in a data gap.</p>';
+    parts.push(el('p', null, 'No federal districts were found at this location. It may be outside the US or in a data gap.'));
   }
 
   const branchOrder = Object.keys(state.config.branches);
@@ -445,35 +463,37 @@ function renderPrintReport(label, matches) {
     const inBranch = matches.filter((m) => m.layer.branch === branchId);
     if (!inBranch.length) continue;
 
-    html += `<section class="report-branch" style="--branch-color:${branch.color}">`;
-    html += `<h2>${branch.icon} ${escapeHtml(branch.label)}</h2>`;
-    if (branch.blurb) html += `<p class="report-branch-blurb">${escapeHtml(branch.blurb)}</p>`;
+    const section = el('section', 'report-branch');
+    section.style.setProperty('--branch-color', branch.color);
+    section.append(el('h2', null, `${branch.icon} ${branch.label}`));
+    if (branch.blurb) section.append(el('p', 'report-branch-blurb', branch.blurb));
+
     for (const { layer, props } of inBranch) {
       const name = featureName(layer, props);
       const link = (layer.featureLinks || {})[name] || layer.officialLink;
       const edu = layer.education || {};
-      html += `<div class="report-item" style="border-left-color:${layer.style.color}">`;
-      html += `<div class="report-layer">${escapeHtml(layer.name)}</div>`;
-      html += `<h3>${escapeHtml(name)}</h3>`;
+      const item = el('div', 'report-item');
+      item.style.borderLeftColor = layer.style.color;
+      item.append(el('div', 'report-layer', layer.name), el('h3', null, name));
       for (const sub of layer.subtitleFields || []) {
-        if (props[sub.field]) {
-          html += `<div class="report-sub"><strong>${escapeHtml(sub.label)}:</strong> ${escapeHtml(props[sub.field])}</div>`;
-        }
+        if (props[sub.field]) item.append(labelledEl('div', 'report-sub', sub.label, props[sub.field]));
       }
-      if (layer.department) html += `<div class="report-sub"><strong>Part of:</strong> ${escapeHtml(layer.department)}</div>`;
-      if (edu.purpose) html += `<p><strong>What it does:</strong> ${escapeHtml(edu.purpose)}</p>`;
-      if (edu.whyItMatters) html += `<p><strong>Why it matters:</strong> ${escapeHtml(edu.whyItMatters)}</p>`;
-      if (link) html += `<div class="report-link">${escapeHtml(link)}</div>`;
-      html += `</div>`;
+      if (layer.department) item.append(labelledEl('div', 'report-sub', 'Part of', layer.department));
+      if (edu.purpose) item.append(labelledEl('p', null, 'What it does', edu.purpose));
+      if (edu.whyItMatters) item.append(labelledEl('p', null, 'Why it matters', edu.whyItMatters));
+      if (link) item.append(el('div', 'report-link', link));
+      section.append(item);
     }
-    html += `</section>`;
+    parts.push(section);
   }
 
-  html += `<footer class="report-footer">`;
-  html += `<p>Boundaries are simplified and approximate: fine for learning, not for legal use. District data comes from US federal agencies and is in the public domain.</p>`;
-  html += `<p>See this on the map: ${escapeHtml(location.href)}</p>`;
-  html += `</footer>`;
-  report.innerHTML = html;
+  const footer = el('footer', 'report-footer');
+  footer.append(
+    el('p', null, 'Boundaries are simplified and approximate: fine for learning, not for legal use. District data comes from US federal agencies and is in the public domain.'),
+    el('p', null, `See this on the map: ${location.href}`),
+  );
+  parts.push(footer);
+  report.replaceChildren(...parts);
 }
 
 // ---------------------------------------------------------------------------
