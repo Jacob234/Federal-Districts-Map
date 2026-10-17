@@ -1,0 +1,45 @@
+{
+  "_source": "NWS County Warning Area and county layers of the NWS Reference Maps service, queried 2026-10-17 (AWIPS files w_16ap26 and c_16ap26): https://mapservices.weather.noaa.gov/static/rest/services/nws_reference_maps/nws_reference_map/MapServer (layer 1 gives each forecast office's region, layer 2 each county's office).",
+  "_method": "Each state is assigned the region that runs most of its forecast offices. 'counties' lists the counties whose office belongs to a different region. A county shared by two offices (NWS codes like GJTSLC) goes with the first office listed.",
+  "regions": {
+    "ER": "Eastern Region",
+    "SR": "Southern Region",
+    "CR": "Central Region",
+    "WR": "Western Region",
+    "AR": "Alaska Region",
+    "PR": "Pacific Region"
+  },
+  "states": {
+    "ER": ["CT", "DE", "DC", "ME", "MD", "MA", "NH", "NJ", "NY", "NC", "OH", "PA", "RI", "SC", "VT", "VA", "WV"],
+    "SR": ["AL", "AR", "FL", "GA", "LA", "MS", "NM", "OK", "TN", "TX", "PR", "VI"],
+    "CR": ["CO", "IL", "IN", "IA", "KS", "KY", "MI", "MN", "MO", "NE", "ND", "SD", "WI", "WY"],
+    "WR": ["AZ", "CA", "ID", "MT", "NV", "OR", "UT", "WA"],
+    "AR": ["AK"],
+    "PR": ["HI", "AS", "GU", "MP"]
+  },
+  "counties": {
+    "ER": {
+      "_note": "GA counties served by Columbia (CAE), Charleston (CHS) and Greenville-Spartanburg (GSP); IN and KY counties served by Wilmington OH (ILN) and Charleston WV (RLX)",
+      "fips": [
+        "13029", "13031", "13033", "13043", "13051", "13073", "13103", "13105", "13109", "13119",
+        "13137", "13147", "13165", "13179", "13181", "13183", "13189", "13191", "13241", "13245",
+        "13251", "13257", "13267",
+        "18029", "18041", "18047", "18115", "18137", "18155", "18161", "18177",
+        "21015", "21019", "21023", "21037", "21041", "21043", "21077", "21081", "21089", "21117",
+        "21127", "21135", "21161", "21187", "21191", "21201"
+      ]
+    },
+    "SR": {
+      "_note": "MO counties served by Memphis (MEG); NC and VA counties served by Morristown TN (MRX)",
+      "fips": ["29069", "29155", "37039", "37043", "51105", "51167", "51169", "51191", "51195", "51520", "51720"]
+    },
+    "CR": {
+      "_note": "OH counties served by Northern Indiana (IWX); UT counties served by Grand Junction (GJT)",
+      "fips": ["39003", "39039", "39051", "39069", "39125", "39137", "39161", "39171", "49009", "49019", "49037", "49047"]
+    },
+    "WR": {
+      "_note": "WY counties served by Billings (BYZ) and Salt Lake City (SLC)",
+      "fips": ["56033", "56041"]
+    }
+  }
+}

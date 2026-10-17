@@ -360,6 +360,78 @@
       "officialLink": "https://www.blm.gov/office/national-office"
     },
     {
+      "id": "us_attorneys",
+      "name": "US Attorney Districts",
+      "file": "data/US_Attorney_Districts.geojson",
+      "branch": "Executive",
+      "department": "Department of Justice",
+      "nameField": "DISTRICT_NAME",
+      "subtitleFields": [
+        { "label": "Office", "field": "OFFICE" }
+      ],
+      "enabledByDefault": false,
+      "style": { "fillColor": "#F783AC", "color": "#C2255C", "weight": 1.5, "fillOpacity": 0.25 },
+      "education": {
+        "title": "Federal Prosecutors",
+        "description": "93 US Attorneys serve the 94 federal judicial districts, so their map matches the district courts; one US Attorney covers both Guam and the Northern Mariana Islands. Each is nominated by the President, confirmed by the Senate, and works under the Attorney General.",
+        "purpose": "Prosecute federal crimes, represent the United States in civil lawsuits, and collect debts owed to the federal government.",
+        "established": "1789 (Judiciary Act)",
+        "whyItMatters": "Most federal criminal cases are brought by a US Attorney's office, and each office sets its own local priorities, from violent crime to fraud."
+      },
+      "officialLink": "https://www.justice.gov/usao"
+    },
+    {
+      "id": "hhs_regions",
+      "name": "HHS Regions",
+      "file": "data/HHS_Regions.geojson",
+      "branch": "Executive",
+      "department": "Department of Health and Human Services",
+      "nameField": "REGION",
+      "subtitleFields": [
+        { "label": "Regional office", "field": "OFFICE" }
+      ],
+      "enabledByDefault": false,
+      "style": { "fillColor": "#63E6BE", "color": "#0CA678", "weight": 2, "fillOpacity": 0.3 },
+      "education": {
+        "title": "Health and Human Services",
+        "description": "HHS uses the standard federal 10-region system (the same layout as EPA, FEMA, and Education), with a regional office in each.",
+        "purpose": "Work with states on Medicare, Medicaid, public health, Head Start, and other health and social service programs.",
+        "established": "1953 (as Health, Education, and Welfare; renamed HHS in 1980)",
+        "whyItMatters": "HHS spends more than any other cabinet department, mostly through Medicare and Medicaid, which cover well over 100 million Americans."
+      },
+      "officialLink": "https://www.hhs.gov/about/agencies/iea/regional-offices/index.html"
+    },
+    {
+      "id": "nws_regions",
+      "name": "National Weather Service Regions",
+      "file": "data/NWS_Regions.geojson",
+      "branch": "Executive",
+      "department": "Department of Commerce (NOAA)",
+      "nameField": "REGION",
+      "subtitleFields": [
+        { "label": "Headquarters", "field": "HEADQUARTERS" }
+      ],
+      "enabledByDefault": false,
+      "style": { "fillColor": "#FFE066", "color": "#F59F00", "weight": 2, "fillOpacity": 0.3 },
+      "education": {
+        "title": "Weather Forecasts and Warnings",
+        "description": "The National Weather Service runs about 120 local forecast offices, grouped into 6 regions. Region lines follow the counties each office covers, so they cut across several states.",
+        "purpose": "Issue the forecasts and the watches and warnings for storms, floods, heat, and other hazards that protect life and property.",
+        "established": "1870 (Army Signal Service); named the National Weather Service in 1970",
+        "whyItMatters": "Every tornado, hurricane, and flash flood warning you receive starts at an NWS forecast office, and private weather apps are built on NWS data."
+      },
+      "officialLink": "https://www.weather.gov/organization",
+      "featureLinkLabel": "Visit the NWS {name} website",
+      "featureLinks": {
+        "Eastern Region": "https://www.weather.gov/erh/",
+        "Southern Region": "https://www.weather.gov/srh/",
+        "Central Region": "https://www.weather.gov/crh/",
+        "Western Region": "https://www.weather.gov/wrh/",
+        "Alaska Region": "https://www.weather.gov/arh/",
+        "Pacific Region": "https://www.weather.gov/prh/"
+      }
+    },
+    {
       "id": "coast_guard",
       "name": "Coast Guard Districts",
       "file": "data/Coast_Guard_Districts.geojson",
@@ -391,6 +463,38 @@
         "Northwest": "https://www.pacificarea.uscg.mil/Our-Organization/Northwest-District/",
         "Oceania": "https://www.pacificarea.uscg.mil/Our-Organization/Oceania-District/",
         "Arctic": "https://www.pacificarea.uscg.mil/Our-Organization/Arctic-District/"
+      }
+    },
+    {
+      "id": "usace_divisions",
+      "name": "Army Corps of Engineers Divisions",
+      "file": "data/USACE_Divisions.geojson",
+      "branch": "Military",
+      "department": "Department of the Army",
+      "nameField": "DIVISION",
+      "subtitleFields": [
+        { "label": "Code", "field": "CODE" },
+        { "label": "Headquarters", "field": "HEADQUARTERS" }
+      ],
+      "enabledByDefault": false,
+      "style": { "fillColor": "#E599F7", "color": "#9C36B5", "weight": 2, "fillOpacity": 0.3 },
+      "education": {
+        "title": "Rivers, Harbors, and Flood Control",
+        "description": "The Army Corps of Engineers runs its civil works program through 8 divisions whose boundaries mostly follow river basins rather than state lines. A ninth, the Transatlantic Division, works overseas and is not shown.",
+        "purpose": "Keep rivers and harbors open for shipping, build and run dams, locks, and levees, reduce flood risk, and issue permits for work in waterways and wetlands.",
+        "established": "1802 (Corps of Engineers); civil works since 1824",
+        "whyItMatters": "Corps dams, levees, and dredged channels shape where floods go and how goods move, from the Mississippi barge lanes to the nation's largest ports."
+      },
+      "officialLink": "https://www.usace.army.mil/Locations/",
+      "featureLinks": {
+        "Great Lakes and Ohio River Division": "https://www.lrd.usace.army.mil/",
+        "Mississippi Valley Division": "https://www.mvd.usace.army.mil/",
+        "North Atlantic Division": "https://www.nad.usace.army.mil/",
+        "Northwestern Division": "https://www.nwd.usace.army.mil/",
+        "Pacific Ocean Division": "https://www.pod.usace.army.mil/",
+        "South Atlantic Division": "https://www.sad.usace.army.mil/",
+        "South Pacific Division": "https://www.spd.usace.army.mil/",
+        "Southwestern Division": "https://www.swd.usace.army.mil/"
       }
     }
   ]
