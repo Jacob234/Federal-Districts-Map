@@ -238,7 +238,9 @@ function featurePopupHtml(layerConfig, props) {
   const featureLink = (layerConfig.featureLinks || {})[name];
   const link = featureLink || layerConfig.officialLink;
   if (link) {
-    const linkLabel = featureLink ? `Visit the ${escapeHtml(name)} website` : 'Official resource';
+    const linkLabel = featureLink
+      ? escapeHtml((layerConfig.featureLinkLabel || 'Visit the {name} website').replace('{name}', () => name))
+      : 'Official resource';
     html += `<div class="popup-link"><a href="${escapeHtml(link)}" target="_blank" rel="noopener">${linkLabel} ↗</a></div>`;
   }
   html += `</div>`;
