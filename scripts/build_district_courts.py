@@ -110,8 +110,8 @@ def statute_key(name):
 
 def abbreviation(direction, state_abbr):
     prefix = f'{direction[0]}.D.' if direction else 'D.'
-    # Bluebook closes up adjacent single capitals: S.D.N.Y., D.N.J., but D. Mass.
-    sep = '' if re.match(r'^[A-Z]\.[A-Z]\.', state_abbr) else ' '
+    # Bluebook closes up adjacent single capitals: S.D.N.Y., N.D.W. Va., but D. Mass.
+    sep = '' if re.match(r'^[A-Z]\.', state_abbr) else ' '
     return f'{prefix}{sep}{state_abbr}'
 
 
