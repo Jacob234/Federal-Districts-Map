@@ -17,8 +17,9 @@ federal government's geography.**
   government" report listing every district by branch, with links spelled out
 - **11 district systems** across the Judicial, Executive, and Military branches
 - **Educational popups** — click any region for its purpose, history, and why it
-  matters, with links to official resources (each Federal Reserve bank and appeals
-  circuit links to its own site)
+  matters, with links to official resources (each district court, appeals circuit,
+  Federal Reserve bank, FEMA and EPA region, and Coast Guard district links to its
+  own page)
 - **Shareable links** — the URL tracks your enabled layers and last search, so you
   can send a classroom-ready view to anyone
 - **Fast** — layers load lazily on first toggle (~100–500 KB each); no build step,
@@ -83,7 +84,9 @@ scripts/build_district_courts.py  # Builds the 94 district courts from county li
    geopandas) to keep it under ~500 KB.
 3. Drop the file in `data/` and add an entry to the `layers` array in
    `layers.json` — name, style colors, which property holds the district name
-   (`nameField`), the educational text, and an official link.
+   (`nameField`), the educational text, and an official link. To link each
+   district to its own page, add a `featureLinks` map from district name to URL
+   (and optionally a `featureLinkLabel` such as `"Visit the EPA {name} website"`).
 
 No code changes needed for a standard polygon layer.
 
@@ -107,6 +110,7 @@ Settings → Pages → deploy from the `main` branch, and the map is live at
 - More agencies: US Attorney districts, HHS regions, Army Corps divisions,
   National Weather Service regions
 - Per-district official links for more systems
+- Printable "your federal government" report after an address search
 
 ## License
 
