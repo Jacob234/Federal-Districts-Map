@@ -270,6 +270,7 @@ function wireControls() {
   });
   document.getElementById('locate-btn').addEventListener('click', useMyLocation);
   document.getElementById('share-btn').addEventListener('click', shareLink);
+  document.getElementById('print-btn').addEventListener('click', () => window.print());
   document.getElementById('sidebar-toggle').addEventListener('click', () => {
     document.getElementById('sidebar').classList.toggle('open');
   });
@@ -369,6 +370,7 @@ async function lookupPoint(lat, lon, label) {
   state.map.flyTo([lat, lon], 9);
 
   renderResults(label, matches);
+  renderPrintReport(label, matches);
   setSearchStatus('');
 }
 
@@ -414,6 +416,86 @@ function renderResults(label, matches) {
   }
   content.innerHTML = html;
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ---------------------------------------------------------------------------
+// Printable report
+//
+// Built after every lookup into #print-report, which the print stylesheet
+// shows in place of the map and sidebar. Unlike the sidebar cards it spells
+// out each link's URL, since a link can't be clicked on paper. Built with DOM
+// calls and textContent rather than an HTML string, so nothing from the
+// address or the data files is ever parsed as markup.
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+// A line like "<strong>Label:</strong> value"
+function labelledEl(tag, className, label, value) {
+  const node = el(tag, className);
+  node.append(el('strong', null, `${label}:`), ` ${value}`);
+  return node;
+}
+
+function renderPrintReport(label, matches) {
+  const report = document.getElementById('print-report');
+  document.getElementById('print-btn').hidden = !matches.length;
+
+  const generated = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  const header = el('header', 'report-header');
+  header.append(
+    el('div', 'report-kicker', 'US Federal Districts'),
+    el('h1', null, 'Your Federal Government'),
+    el('p', 'report-address', `📍 ${label}`),
+    el('p', 'report-meta', `Generated ${generated} · ${matches.length} federal district${matches.length === 1 ? '' : 's'}`),
+  );
+  const parts = [header];
+
+  if (!matches.length) {
+    parts.push(el('p', null, 'No federal districts were found at this location. It may be outside the US or in a data gap.'));
+  }
+
+  const branchOrder = Object.keys(state.config.branches);
+  for (const branchId of branchOrder) {
+    const branch = state.config.branches[branchId];
+    const inBranch = matches.filter((m) => m.layer.branch === branchId);
+    if (!inBranch.length) continue;
+
+    const section = el('section', 'report-branch');
+    section.style.setProperty('--branch-color', branch.color);
+    section.append(el('h2', null, `${branch.icon} ${branch.label}`));
+    if (branch.blurb) section.append(el('p', 'report-branch-blurb', branch.blurb));
+
+    for (const { layer, props } of inBranch) {
+      const name = featureName(layer, props);
+      const link = (layer.featureLinks || {})[name] || layer.officialLink;
+      const edu = layer.education || {};
+      const item = el('div', 'report-item');
+      item.style.borderLeftColor = layer.style.color;
+      item.append(el('div', 'report-layer', layer.name), el('h3', null, name));
+      for (const sub of layer.subtitleFields || []) {
+        if (props[sub.field]) item.append(labelledEl('div', 'report-sub', sub.label, props[sub.field]));
+      }
+      if (layer.department) item.append(labelledEl('div', 'report-sub', 'Part of', layer.department));
+      if (edu.purpose) item.append(labelledEl('p', null, 'What it does', edu.purpose));
+      if (edu.whyItMatters) item.append(labelledEl('p', null, 'Why it matters', edu.whyItMatters));
+      if (link) item.append(el('div', 'report-link', link));
+      section.append(item);
+    }
+    parts.push(section);
+  }
+
+  const footer = el('footer', 'report-footer');
+  footer.append(
+    el('p', null, 'Boundaries are simplified and approximate: fine for learning, not for legal use. District data comes from US federal agencies and is in the public domain.'),
+    el('p', null, `See this on the map: ${location.href}`),
+  );
+  parts.push(footer);
+  report.replaceChildren(...parts);
 }
 
 // ---------------------------------------------------------------------------

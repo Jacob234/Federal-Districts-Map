@@ -37,6 +37,7 @@
     <section id="results-panel" hidden>
       <h2>Your Districts</h2>
       <div id="results-content"></div>
+      <button id="print-btn" type="button" hidden title="Print or save a one-page report of these districts">🖨️ Print report</button>
     </section>
 
     <section id="layer-panel">
@@ -57,6 +58,11 @@
       </p>
     </section>
   </aside>
+
+  <!-- Filled in after an address search; the only thing shown when printing -->
+  <article id="print-report">
+    <p class="report-empty">Search for an address on the map first, then print to get a report of every federal district it falls in.</p>
+  </article>
 
   <noscript>
     <div style="position:absolute;inset:0;background:#fff;z-index:2000;padding:40px;font-family:sans-serif;">

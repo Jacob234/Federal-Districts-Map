@@ -13,6 +13,8 @@ federal government's geography.**
 - **Address search** — geocode any US address (via OpenStreetMap/Nominatim) and see
   every federal district containing it, grouped by branch of government
 - **"Use my location"** — one-tap district lookup via browser geolocation
+- **Printable report** — after a search, print (or save as PDF) a "your federal
+  government" report listing every district by branch, with links spelled out
 - **11 district systems** across the Judicial, Executive, and Military branches
 - **Educational popups** — click any region for its purpose, history, and why it
   matters, with links to official resources (each district court, appeals circuit,
@@ -107,6 +109,7 @@ Settings → Pages → deploy from the `main` branch, and the map is live at
 - Bankruptcy courts at the district level, reusing the district court boundaries (fixes footnote ¹)
 - More agencies: US Attorney districts, HHS regions, Army Corps divisions,
   National Weather Service regions
+- Per-district official links for more systems
 - Printable "your federal government" report after an address search
 
 ## License
