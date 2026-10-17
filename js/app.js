@@ -295,7 +295,7 @@ async function searchAddress() {
   setSearchBusy(true);
   setSearchStatus('Looking up address…');
   try {
-    const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=' + encodeURIComponent(address);
+    const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us,pr,gu,vi,mp&q=' + encodeURIComponent(address);
     const resp = await fetch(url);
     if (!resp.ok) throw new Error('Geocoding service unavailable');
     const results = await resp.json();
@@ -395,6 +395,11 @@ function renderResults(label, matches) {
       html += `<div class="result-card" style="border-left-color:${layer.style.color}">`;
       html += `<div class="result-layer">${escapeHtml(layer.name)}</div>`;
       html += `<div class="result-name">${escapeHtml(name)}</div>`;
+      for (const sub of layer.subtitleFields || []) {
+        if (props[sub.field]) {
+          html += `<div class="result-sub"><strong>${escapeHtml(sub.label)}:</strong> ${escapeHtml(props[sub.field])}</div>`;
+        }
+      }
       if (layer.education && layer.education.purpose) {
         html += `<div class="result-purpose">${escapeHtml(layer.education.purpose)}</div>`;
       }

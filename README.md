@@ -13,7 +13,7 @@ federal government's geography.**
 - **Address search** — geocode any US address (via OpenStreetMap/Nominatim) and see
   every federal district containing it, grouped by branch of government
 - **"Use my location"** — one-tap district lookup via browser geolocation
-- **10 district systems** across the Judicial, Executive, and Military branches
+- **11 district systems** across the Judicial, Executive, and Military branches
 - **Educational popups** — click any region for its purpose, history, and why it
   matters, with links to official resources (each Federal Reserve bank and appeals
   circuit links to its own site)
@@ -28,6 +28,7 @@ federal government's geography.**
 | Branch | System | Districts |
 |---|---|---|
 | ⚖️ Judicial | Courts of Appeals Circuits | 12 |
+| ⚖️ Judicial | US District Courts³ | 94 |
 | ⚖️ Judicial | Bankruptcy Courts (grouped by circuit)¹ | 12 |
 | 🏛️ Executive | FEMA Regions | 10 |
 | 🏛️ Executive | EPA Regions | 10 |
@@ -43,6 +44,9 @@ currently shows them grouped at the circuit level. District-level boundaries are
 planned.
 ² The Federal Reserve is an independent central bank, grouped here with the
 Executive branch for navigation.
+³ Built from Census county boundaries and the county lists in 28 U.S.C.
+§§ 81–131 by `scripts/build_district_courts.py`. American Samoa has no district
+court and is not shown.
 
 ## Running locally
 
@@ -66,6 +70,7 @@ js/app.js           # All application logic (Leaflet, search, point-in-polygon)
 css/style.css       # Styles
 data/*.geojson      # Optimized district boundaries (~2.8 MB total)
 scripts/optimize_data.py  # Simplifies raw agency GeoJSON (needs geopandas)
+scripts/build_district_courts.py  # Builds the 94 district courts from county lists
 ```
 
 ## Adding a new district system
@@ -96,7 +101,7 @@ Settings → Pages → deploy from the `main` branch, and the map is live at
 
 ## Roadmap
 
-- US District Courts (the 94 judicial districts — also fixes footnote ¹)
+- Bankruptcy courts at the district level, reusing the district court boundaries (fixes footnote ¹)
 - More agencies: US Attorney districts, HHS regions, Army Corps divisions,
   National Weather Service regions
 - Printable "your federal government" report after an address search

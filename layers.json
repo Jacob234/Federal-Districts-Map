@@ -52,6 +52,33 @@
       }
     },
     {
+      "id": "district_courts",
+      "name": "US District Courts",
+      "file": "data/US_District_Courts.geojson",
+      "branch": "Judicial",
+      "nameField": "DISTRICT_NAME",
+      "subtitleFields": [
+        { "label": "Appeals go to", "field": "CIRCUIT" },
+        { "label": "Citation abbreviation", "field": "ABBREVIATION" },
+        { "label": "Court type", "field": "COURT_TYPE" }
+      ],
+      "enabledByDefault": false,
+      "style": {
+        "fillColor": "#748FFC",
+        "color": "#364FC7",
+        "weight": 1.5,
+        "fillOpacity": 0.25
+      },
+      "education": {
+        "title": "Federal Trial Courts",
+        "description": "The 94 US district courts are the trial courts of the federal system. Every state has at least one; larger states are split into two, three, or four districts named by direction (Northern, Southern, Eastern, Western, Central, Middle). DC and Puerto Rico each have one, and Guam, the Virgin Islands, and the Northern Mariana Islands have territorial courts that act as district courts.",
+        "purpose": "Hear federal criminal prosecutions and civil cases that arise under federal law or are between citizens of different states, often before a jury.",
+        "established": "1789 (Judiciary Act)",
+        "whyItMatters": "Nearly every federal case starts here. Your district decides which judges hear a federal case, which US Attorney's office prosecutes federal crimes, and which circuit's precedent the court must follow."
+      },
+      "officialLink": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+    },
+    {
       "id": "bankruptcy_courts",
       "name": "Bankruptcy Courts (grouped by circuit)",
       "file": "data/Bankruptcy_Courts.geojson",

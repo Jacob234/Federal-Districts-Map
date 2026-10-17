@@ -159,6 +159,7 @@ html, body {
 .result-layer { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #78909c; }
 .result-name { font-size: 14px; font-weight: 600; margin: 2px 0 4px; }
 .result-purpose { font-size: 12px; color: #607d8b; font-style: italic; }
+.result-sub { font-size: 12px; margin: 2px 0; color: #546e7a; }
 .result-link { display: inline-block; margin-top: 4px; font-size: 12px; color: #2980b9; text-decoration: none; }
 .result-link:hover { text-decoration: underline; }
 
