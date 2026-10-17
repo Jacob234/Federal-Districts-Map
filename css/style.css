@@ -14,6 +14,13 @@ html, body {
   inset: 0;
 }
 
+/* Mute the full-colour OpenStreetMap tiles into a light, neutral basemap.
+   Set on the tiles, not the pane: Leaflet's .leaflet-tile { filter: inherit }
+   would otherwise apply it twice. */
+.leaflet-tile-pane .leaflet-tile {
+  filter: grayscale(1) brightness(1.08) contrast(0.85);
+}
+
 /* ---------- Sidebar ---------- */
 
 #sidebar {

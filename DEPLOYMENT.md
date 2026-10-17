@@ -53,8 +53,10 @@ python3 -m http.server 8000
   from the visitor's browser (free, no API key). Nominatim's usage policy
   allows light use like this; if the site ever gets heavy traffic, switch to a
   commercial geocoder or self-hosted Nominatim.
-- **Base map tiles**: served by CARTO's free basemap CDN with OpenStreetMap
-  attribution.
+- **Base map tiles**: standard OpenStreetMap tiles (free, no API key), muted
+  with a CSS filter. OpenStreetMap's tile usage policy allows light use like
+  this with attribution; if traffic grows, switch to a hosted tile provider.
+  (CARTO's basemap CDN, used previously, now requires an API key.)
 - **HTTPS**: required for the "Use my location" button (browsers block
   geolocation on insecure origins). GitHub Pages, Netlify, and Vercel all
   provide HTTPS by default.
