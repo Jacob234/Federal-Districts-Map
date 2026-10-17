@@ -14,6 +14,11 @@ html, body {
   inset: 0;
 }
 
+/* Mute the full-colour OpenStreetMap tiles into a light, neutral basemap. */
+.leaflet-tile-pane {
+  filter: grayscale(1) brightness(1.08) contrast(0.85);
+}
+
 /* ---------- Sidebar ---------- */
 
 #sidebar {

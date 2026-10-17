@@ -36,9 +36,10 @@ async function init() {
   });
   L.control.zoom({ position: 'topright' }).addTo(state.map);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
+  // Standard OpenStreetMap tiles: free and keyless (CARTO's basemaps now need an
+  // API key). They are muted in CSS so the district layers stay readable.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19,
   }).addTo(state.map);
 
